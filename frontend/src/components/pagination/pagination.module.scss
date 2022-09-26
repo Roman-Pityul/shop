@@ -1,0 +1,25 @@
+.root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  ul li {
+    display: inline-block;
+    margin-left: 20px;
+    padding: 10px 15px;
+    color: #70c05b;
+    border: 1px solid #70c05b;
+    border-radius: 30px;
+    cursor: pointer;
+
+    &:hover {
+      color: #fff;
+      background-color: #70c05b;
+    }
+  }
+
+  .active {
+    color: #fff !important;
+    background-color: #70c05b;
+  }
+}

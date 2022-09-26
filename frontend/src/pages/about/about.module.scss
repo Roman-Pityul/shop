@@ -1,0 +1,119 @@
+.head {
+   display: flex;
+   background-image: url('../../img/Vector.svg');
+   background-repeat: no-repeat;
+   background-position: right;
+   margin-top: 130px;
+   margin-bottom: 110px;
+
+   .left {
+      width: 50%;
+
+      span {
+         font-family: 'Rubik', sans-serif;
+         font-style: normal;
+         font-weight: 700;
+         font-size: 64px;
+         line-height: 150%;
+         margin: 0;
+      }
+
+      p {
+         font-family: 'Rubik';
+         font-style: normal;
+         font-weight: 700;
+         font-size: 24px;
+         line-height: 150%;
+         color: #FF6633;
+         width: 669px;
+         height: 144px;
+      }
+   }
+
+   .right {
+      width: 50%;
+      position: relative;
+
+      img {
+         position: absolute;
+         left: -35px;
+         bottom: -3px;
+      }
+   }
+}
+
+.center {
+   display: flex;
+
+   .block {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-right: 80px;
+      position: relative;
+
+      img {
+         width: 30px;
+         height: 30px;
+         position: absolute;
+         left: -40px;
+      }
+   }
+
+   .block:first-child {
+      margin-right: 100px;
+   }
+
+   .block:last-child {
+      margin-right: 0;
+   }
+
+   .title {
+      font-family: 'Rubik';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 150%;
+      color: #414141;
+      margin-bottom: 16px;
+   }
+
+   .description {
+      font-family: 'Rubik';
+      font-style: normal;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 150%;
+      color: #414141;
+   }
+}
+
+.bottom {
+   margin: 120px 0 80px 0;
+
+   div>img {
+      width: 127px;
+      height: 103px;
+      margin-right: 40px;
+   }
+
+   div {
+      display: flex;
+      justify-content: center;
+   }
+
+   div>div {
+      width: 805px;
+      height: 96px;
+      background: #E5FFDE;
+      border-radius: 16px;
+      color: #70C05B;
+
+      font-family: 'Rubik';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 96px;
+      text-align: center;
+   }
+}

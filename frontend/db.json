@@ -1,0 +1,551 @@
+{
+   "items": [
+      {
+         "id": "1",
+         "category": "milk-cheese-egg",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/ae/26/005f35a5117895688204ace43fe7.jpg",
+         "price": "95.90",
+         "sale": {
+            "price": "45.00",
+            "percent": "15"
+         },
+         "description": "Молоко пастеризованное Домик в деревне 3.7%, 930мл"
+      },
+      {
+         "id": "2",
+         "category": "milk-cheese-egg",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/41/7d/09917719825aff04675124857ba6.jpg",
+         "price": "87.90",
+         "description": "Молоко пастеризованное Домик в деревне 2.5%, 930мл"
+      },
+      {
+         "id": "3",
+         "category": "milk-cheese-egg",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/13/42/cb462993ff86b0a81e24428d8643.jpg",
+         "price": "99.90",
+         "sale": {
+            "price": "85.25",
+            "percent": "10"
+         },
+         "description": "Молоко ультрапастеризованное Домик в деревне 3.2%, 925мл"
+      },
+      {
+         "id": "4",
+         "category": "milk-cheese-egg",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/4b/19/61590cdd4650f8a5db34ce3cd269.jpg",
+         "price": "93.90",
+         "sale": {
+            "price": "73.65",
+            "percent": "15"
+         },
+         "description": "Молоко ультрапастеризованное Домик в деревне 2.5%, 950мл"
+      },
+      {
+         "id": "5",
+         "category": "milk-cheese-egg",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/cf/f1/babd0375503eacbfb859d46f4db8.jpg",
+         "price": "159.99",
+         "description": "Сыр творожный Hochland Сливочный 60%, 220г"
+      },
+      {
+         "id": "6",
+         "category": "bread",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/80/4d/b90d6fa79381fcd5a6524d64ba8a.jpg",
+         "price": "42.90",
+         "description": "Багет Перекрёсток Парижский, 140г"
+      },
+      {
+         "id": "7",
+         "category": "bread",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/6c/4c/df8db6356563f0c563c30f293e00.jpg",
+         "price": "64.90",
+         "sale": {
+            "price": "43.65",
+            "percent": "13"
+         },
+         "description": "Багет Перекрёсток с чесноком половинка, 160г"
+      },
+      {
+         "id": "8",
+         "category": "bread",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/45/04/602b205297fd06ee4e7becba03cc.jpg",
+         "price": "44.90",
+         "description": "Слойка Перекрёсток с вишней, 105г"
+      },
+      {
+         "id": "9",
+         "category": "bread",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/21/f1/b16ed811e3496d73d295a18a3dd8.jpg",
+         "price": "43.90",
+         "description": "Батон Щелковохлеб Щелковский нарезка, 380г"
+      },
+      {
+         "id": "10",
+         "category": "bread",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/50/66/9cbb69d17a8b539d143214978c13.jpg",
+         "price": "26.90",
+         "description": "Хлеб Щелковохлеб Дарницкий нарезка, 320г"
+      },
+      {
+         "id": "11",
+         "category": "fruits-vegatables",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/77/cc/a2edf6085c3f788a151d38a0f3a5.jpg",
+         "price": "169.90",
+         "sale": {
+            "price": "136.50",
+            "percent": "15"
+         },
+         "description": "Киви, кг"
+      },
+      {
+         "id": "12",
+         "category": "fruits-vegatables",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/e3/b7/58d8b5d4565bc1a3d959xd0239b2.jpg",
+         "price": "119.90",
+         "description": "Яблоки Кримсон сноу, кг"
+      },
+      {
+         "id": "13",
+         "category": "fruits-vegatables",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/a2/dd/8f2b2b34a50e5ef0524ae1820ed2.jpg",
+         "price": "369.90",
+         "sale": {
+            "price": "286.85",
+            "percent": "20"
+         },
+         "description": "Мандарины отборные, кг"
+      },
+      {
+         "id": "14",
+         "category": "fruits-vegatables",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/52/7f/f0a48a199e5ac28fa09d5941536b.jpg",
+         "price": "59.90",
+         "description": "Картофель, кг"
+      },
+      {
+         "id": "15",
+         "category": "fruits-vegatables",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/01/e1/0e6f3e8ec226b8d9f32fce566f01.jpg",
+         "price": "45.00",
+         "description": "Огурцы Люкс, 450г"
+      },
+      {
+         "id": "16",
+         "category": "frozen-foods",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/9f/a2/3328e2dd6fa78e17569962d27db6.jpg",
+         "price": "329.99",
+         "description": "Пельмени Горячая штучка Бульмени с говядиной и свининой, 900г"
+      },
+      {
+         "id": "17",
+         "category": "frozen-foods",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/3f/96/12fe91630ca34ba46e923c391972.jpg",
+         "price": "579.99",
+         "sale": {
+            "price": "493.00",
+            "percent": "15"
+         },
+         "description": "Пельмени Мираторг домашние из свинины и говядины, 800г"
+      },
+      {
+         "id": "18",
+         "category": "frozen-foods",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/e9/66/eb1b703ca86947df507ef6952c1b.jpg",
+         "price": "389.00",
+         "sale": {
+            "price": "229.00",
+            "percent": "20"
+         },
+         "description": "Вареники Сибирская Коллекция с картофелем и лисичками замороженные, 700г"
+      },
+      {
+         "id": "19",
+         "category": "frozen-foods",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/20/f7/196ed2a01b7d73fafb844e3c5193.jpg",
+         "price": "899.99",
+         "description": "Креветки королевские 50/70 замороженные, кг"
+      },
+      {
+         "id": "20",
+         "category": "frozen-foods",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/62/d4/11ca97e6de3d4d3bc85ed9b16bc5.jpg",
+         "price": "159.99",
+         "description": "Смесь овощная Hortex Гавайская замороженная, 400г"
+      },
+      {
+         "id": "21",
+         "category": "drinks",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/ff/1e/xdccbfa61d5b446ff2e9ac880bfa.jpg",
+         "price": "55.90",
+         "sale": {
+            "price": "44.90",
+            "percent": "20"
+         },
+         "description": "Вода Aqua Minerale обработанная питьевая газированная, 2л"
+      },
+      {
+         "id": "22",
+         "category": "drinks",
+         "img": "https://cdn-img.perekrestok.ru/i/400x400-fit/xdelivery/files/b6/af/56d742fcaee154a180125cb85648.jpg",
+         "price": "144.90",
+         "description": "Напиток газированный Pepsi, 2л"
+      },
+      {
+         "id": "23",
+         "category": "drinks",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/aa/dd/cd04193f115599807c7e91b0561d.jpg",
+         "price": "169.90",
+         "sale": {
+            "price": "99.90",
+            "percent": "40"
+         },
+         "description": "Энергетический напиток Adrenaline Rush без сахара, 449мл"
+      },
+      {
+         "id": "24",
+         "category": "drinks",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/19/19/9d3xd20bc35a140610177de312af.jpg",
+         "price": "169.90",
+         "description": "Нектар Я Вишня осветленный, 970мл"
+      },
+      {
+         "id": "25",
+         "category": "drinks",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/c0/5f/7e321eb6c5dd996xdba36773184a.jpg",
+         "price": "109.90",
+         "description": "Квас Очаковский двойного брожения, 2л"
+      },
+      {
+         "id": "26",
+         "category": "confectionery-products",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/de/9f/2de4b8a79feb6bf1097cb791ee9e.jpg",
+         "price": "41.90",
+         "description": "Печенье Юбилейное Традиционное витаминизированное, 134г"
+      },
+      {
+         "id": "27",
+         "category": "confectionery-products",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/0d/c9/4b3555083e56034d6ce8d0a51afd.jpg",
+         "price": "129.90",
+         "sale": {
+            "price": "100.90",
+            "percent": "10"
+         },
+         "description": "Шоколад молочный Milka с цельным фундуком, 85г"
+      },
+      {
+         "id": "28",
+         "category": "confectionery-products",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/52/62/f8917798a8672c629f6axd948244.jpg",
+         "price": "114.90",
+         "sale": {
+            "price": "79.90",
+            "percent": "20"
+         },
+         "description": "Шоколад молочный Kinder Chocolate с молочной начинкой, 100г"
+      },
+      {
+         "id": "29",
+         "category": "confectionery-products",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/e0/ff/b1b7532b81d796b799d1e5f22028.jpg",
+         "price": "95.90",
+         "description": "Шоколад горький Спартак элитный 90%, 90г"
+      },
+      {
+         "id": "30",
+         "category": "confectionery-products",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/82/cf/c4a8ea90394f5e3e29db202a5d0a.jpg",
+         "price": "139.90",
+         "description": "Шоколад тёмный Ritter Sport с марципаном, 100г"
+      },
+      {
+         "id": "31",
+         "category": "tea-coffee",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/df/4b/051830bb36573ccc87d1d53039ed.jpg",
+         "price": "719.00",
+         "sale": {
+            "price": "618.14",
+            "percent": "15"
+         },
+         "description": "Кофе Nescafé Gold натуральный растворимый с добавлением молотого, 220г"
+      },
+      {
+         "id": "32",
+         "category": "tea-coffee",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/85/1c/666c97ca34fa9047421c2e647fd0.jpg",
+         "price": "15.90",
+         "description": "Напиток кофейный MacCoffee Original 3в1 растворимый, 20г"
+      },
+      {
+         "id": "33",
+         "category": "tea-coffee",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/c2/8d/fbbf88470f7201ddfc5e515e415a.jpg",
+         "price": "459.00",
+         "sale": {
+            "price": "365.30",
+            "percent": "20"
+         },
+         "description": "Чай Greenfield Kenyan Sunrise чёрный в пакетиках, 100х2г"
+      },
+      {
+         "id": "34",
+         "category": "tea-coffee",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/92/ed/ec3ce8d7d036f8caa08fdf3e8886.jpg",
+         "price": "469.00",
+         "description": "Чай Greenfield Золотой Цейлон чёрный в пакетиках, 100х2г"
+      },
+      {
+         "id": "35",
+         "category": "tea-coffee",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/eb/ac/39864f4cf890c4314b2fcf2f5f50.jpg",
+         "price": "239.00",
+         "sale": {
+            "price": "215.10",
+            "percent": "10"
+         },
+         "description": "Сахар Mama Nature Мусковадо тростниковый нерафинированный тёмный, 500г"
+      },
+      {
+         "id": "36",
+         "category": "grocery",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/30/e3/87dxdbfc66bc938ba2327e2a5ccb.jpg",
+         "price": "73.90",
+         "description": "Макароны Makfa Петушиные гребешки, 450г"
+      },
+      {
+         "id": "37",
+         "category": "grocery",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/fc/7a/fea85899f3e0b95dd124e6798c7e.jpg",
+         "price": "109.99",
+         "description": "Макаронные изделия Barilla Spaghettini n.3 из твёрдых сортов пшеницы, 450г"
+      },
+      {
+         "id": "38",
+         "category": "grocery",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/a9/65/d92a90796fbb8705a2e4ebee90d4.jpg",
+         "price": "174.99",
+         "description": "Масло подсолнечное Altero с добавлением оливкового, 810мл"
+      },
+      {
+         "id": "39",
+         "category": "grocery",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/b2/61/da16a2379dbaaf66dbc7bd1fec33.jpg",
+         "price": "124.90",
+         "description": "Рис Маркет Перекрёсток длиннозёрный, 900г"
+      },
+      {
+         "id": "40",
+         "category": "grocery",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/74/74/641e4a18d9bd1aa0b1f2acbfaa2d.jpg",
+         "price": "57.90",
+         "description": "Мука Маркет Перекрёсток пшеничная хлебопекарная высшего сорта, 1кг"
+      },
+      {
+         "id": "41",
+         "category": "healthy-eating",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/a3/51/bc2331341e54534c0eddeb2f9066.jpg",
+         "price": "104.90",
+         "description": "Цикорий Большая чашка Классический растворимый, 85г"
+      },
+      {
+         "id": "42",
+         "category": "healthy-eating",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/5c/00/503013539d73a533c022b25ab1e6.jpg",
+         "price": "134.99",
+         "description": "Сахарозаменитель Milford Suss с дозатором 650 таблеток, 39г"
+      },
+      {
+         "id": "43",
+         "category": "healthy-eating",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/52/8f/0926b54035ac80cdce85bdc85836.jpg",
+         "price": "42.90",
+         "sale": {
+            "price": "29.90",
+            "percent": "40"
+         },
+         "description": "Отруби Зелёная Линия хрустящие овсяные, 230г"
+      },
+      {
+         "id": "44",
+         "category": "healthy-eating",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/e6/c2/7205f36666af6e8c2516be9a552c.jpg",
+         "price": "119.90",
+         "description": "Напиток Gatorade Orange спортивный со вкусом апельсина, 500мл"
+      },
+      {
+         "id": "45",
+         "category": "healthy-eating",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/51/c8/459b3dda0425cdb7ae7a38a33ecd.jpg",
+         "price": "93.90",
+         "sale": {
+            "price": "59.90",
+            "percent": "40"
+         },
+         "description": "Хлебцы Dr.Korner гречневые с витаминами, 100г"
+      },
+      {
+         "id": "46",
+         "category": "pet-supplies",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/8f/6e/c46afefc3bd066eff629efc02113.jpg",
+         "price": "23.90",
+         "description": "Корм Whiskas паштет с курицей и индейкой консервированный для взрослых кошек, 75г"
+      },
+      {
+         "id": "47",
+         "category": "pet-supplies",
+         "img": "https://cdn-img.perekrestok.ru/i/400x400-fit/xdelivery/files/39/ba/6105f18fe7c58e40ee58cc78459e.jpg",
+         "price": "21.90",
+         "description": "Корм Pedigree с говядиной и ягнёнком в соусе для взрослых собак всех пород, 85г"
+      },
+      {
+         "id": "48",
+         "category": "pet-supplies",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/8c/c8/6797995c649053ffe5b62bff9658.jpg",
+         "price": "33.90",
+         "description": "Корм Cesar курица с зелёными овощами в соусе для собак, 85г"
+      },
+      {
+         "id": "49",
+         "category": "pet-supplies",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/3a/a2/1419a16c5dc589d92e4139d8710c.jpg",
+         "price": "279.00",
+         "sale": {
+            "price": "230.00",
+            "percent": "20"
+         },
+         "description": "Корм сухой Perfect Fit Sterile с курицей для стерилизованных кошек, 650г"
+      },
+      {
+         "id": "50",
+         "category": "pet-supplies",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/6f/7b/80fb893dca1b2bd95d45b27a08f4.jpg",
+         "price": "129.99",
+         "description": "Сено Triol Криспи для грызунов"
+      },
+      {
+         "id": "51",
+         "category": "non-food-products",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/49/db/2a4f5a19fcdcefe44a8c1338d2c3.jpg",
+         "price": "469.00",
+         "sale": {
+            "price": "365.25",
+            "percent": "15"
+         },
+         "description": "Бумага туалетная Zewa Deluxe белая 3 слоя, 12шт"
+      },
+      {
+         "id": "52",
+         "category": "non-food-products",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/4f/61/58e5eaxd170883cc5984a8c132ce.jpg",
+         "price": "124.90",
+         "description": "Тест Evitest для определения беременности"
+      },
+      {
+         "id": "53",
+         "category": "non-food-products",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/01/7d/d290973b99ecc522453870c52da8.jpg",
+         "price": "119.90",
+         "description": "Зубная паста Colgate Тройное действие, 100мл"
+      },
+      {
+         "id": "54",
+         "category": "non-food-products",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/25/c1/e90f74e2d47e5b07b8922xdd5a2c.jpg",
+         "price": "269.00",
+         "description": "Тампоны O.B. Procomfort Super, 16шт"
+      },
+      {
+         "id": "55",
+         "category": "non-food-products",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/b0/a6/15ce9d7e981ef5d3b955cb1ef77a.jpg",
+         "price": "699.90",
+         "sale": {
+            "price": "606.90",
+            "percent": "10"
+         },
+         "description": "Шампунь-бальзам-ополаскиватель Head&Shoulders Ментол против перхоти 2в1, 400мл"
+      },
+      {
+         "id": "56",
+         "category": "baby-food",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/11/45/6bd95c04d156c6793ed67250f658.jpg",
+         "price": "41.90",
+         "description": "Сок детский Агуша Яблоко осветленный с 4 месяцев, 200мл"
+      },
+      {
+         "id": "57",
+         "category": "baby-food",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/e7/16/f916925a8b6c327a339a1d27f653.jpg",
+         "price": "139.90",
+         "description": "Вода детская Агуша, 5л"
+      },
+      {
+         "id": "58",
+         "category": "baby-food",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/8e/49/12ee76b8b212d78db3906d4bfe0e.jpg",
+         "price": "37.99",
+         "description": "Творог фруктовый Агуша Яблоко-Банан-Малина для детского питания с 6 месяцев 3.7%, 90г"
+      },
+      {
+         "id": "59",
+         "category": "baby-food",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/cb/c7/d380b007e31357713306a547f849.jpg",
+         "price": "829.00",
+         "sale": {
+            "price": "765.33",
+            "percent": "15"
+         },
+         "description": "Смесь Nutrilon 1 Premium сухая молочная адаптированная с рождения, 800г"
+      },
+      {
+         "id": "60",
+         "category": "baby-food",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/b5/a3/67096b765e1dc9e84c9eef5c50b3.jpg",
+         "price": "949.00",
+         "sale": {
+            "price": "745.32",
+            "percent": "20"
+         },
+         "description": "Смесь Nan 2 Optipro молочная с 6 месяцев, 800г"
+      },
+      {
+         "id": "61",
+         "category": "meat-poultry-sausage",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/b7/aa/a542574e69d33ab30c9ca3e9fd1a.jpg",
+         "price": "159.99",
+         "description": "Тушка цыплёнка 1 сорт охлаждённый, кг"
+      },
+      {
+         "id": "62",
+         "category": "meat-poultry-sausage",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/96/98/384d03cf1396013891f117740465.jpg",
+         "price": "399.00",
+         "description": "Филе грудки цыплёнка Петелинка, кг"
+      },
+      {
+         "id": "63",
+         "category": "meat-poultry-sausage",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/1c/0c/d5965a1ef4536c23daf27aa8c685.jpg",
+         "price": "319.99",
+         "description": "Сосиски Клинский сливочные, 470г"
+      },
+      {
+         "id": "64",
+         "category": "meat-poultry-sausage",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/f6/a1/b10b2d160c78ae3eca5d2eb872de.jpg",
+         "price": "209.90",
+         "description": "Шарики из мяса цыплят-бройлеров Первая Свежесть охлаждённые, 450г"
+      },
+      {
+         "id": "65",
+         "category": "meat-poultry-sausage",
+         "img": "https://s98540.cdn.ngenix.net/i/400x400-fit/xdelivery/files/a2/d0/53ac538fd634fae32932b87edf30.jpg",
+         "price": "739.00",
+         "sale": {
+            "price": "660.60",
+            "percent": "15"
+         },
+         "description": "Задняя часть говяжья Перекрёсток без кости, кг"
+      }
+   ]
+}

@@ -1,0 +1,42 @@
+.footer {
+   height: 126px;
+   background-image: url('../../img/bg.png');
+   background-color: #F9F4E2;
+
+   &__content {
+      max-width: 1208px;
+      margin: 0 auto;
+      padding-top: 30px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+   }
+
+   &__left {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+   }
+
+   &__link {
+      margin-left: 30px;
+      font-size: 12px;
+      cursor: pointer;
+      text-decoration: none;
+      color: black;
+   }
+
+   &__right {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+   }
+
+   &__right>img {
+      margin-right: 20px;
+      cursor: pointer;
+   }
+}

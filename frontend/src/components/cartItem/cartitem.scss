@@ -1,0 +1,132 @@
+.cartitem {
+   width: 875px;
+   height: 72px;
+   padding: 10px 5px 10px 5px;
+   margin-bottom: 20px;
+   background: #FFFFFF;
+   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+   border-radius: 4px;
+   display: flex;
+   justify-content: space-between;
+   position: relative;
+
+   &_info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      margin-left: 10px;
+   }
+
+   &_info p,
+   span {
+      margin: 0;
+   }
+
+   &_left {
+      display: flex;
+      justify-content: space-between;
+   }
+
+   &_left>img {
+      width: 80px;
+   }
+
+   &_right {
+      display: flex;
+      align-items: center;
+   }
+
+   &_buttons {
+      background-color: #70C05B;
+      margin-right: 80px;
+      width: 86px;
+      height: 26px;
+      padding: 8px;
+      border-radius: 4px;
+      display: flex;
+      justify-content: space-between;
+   }
+
+   &_buttons>button {
+      border: none;
+      background-color: #70C05B;
+      cursor: pointer;
+   }
+
+   &_buttons>button:last-child {
+      margin-bottom: -4px;
+   }
+
+   &_buttons button {
+      color: #FFFFFF;
+      font-size: 20px;
+   }
+
+   &_count {
+      margin: 3px 0 0 0;
+      color: #fff
+   }
+
+   &_item-name {
+      font-size: 16px;
+   }
+
+   &_item-price {
+      display: flex;
+
+   }
+
+   &_item-price>p {
+      margin-left: 4px;
+      font-size: 12px;
+   }
+
+   &_price {
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      width: 70px;
+   }
+
+   &_price p,
+   span {
+      margin: 0;
+   }
+
+   &_price-sale {
+      display: flex;
+   }
+
+   &_price-sale>p {
+      font-weight: 700;
+      font-size: 16px;
+      margin-right: 5px;
+   }
+
+   &_price-nosale {
+      display: flex;
+   }
+
+   &_price-nosale-through {
+      font-size: 14px;
+      text-decoration: line-through;
+   }
+
+   &_delete {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      width: 30px;
+      height: 30px;
+      background-color: #70C05B;
+      color: #fff;
+      text-align: center;
+      line-height: 28px;
+      border-radius: 5px;
+      cursor: pointer;
+   }
+}
+
+.cartitem:hover {
+   box-shadow: 4px 8px 16px rgba(255, 102, 51, 0.2);
+}

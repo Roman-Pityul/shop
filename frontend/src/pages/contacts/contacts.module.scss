@@ -1,0 +1,95 @@
+.contacts {
+   .title {
+      font-family: 'Rubik';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 50px;
+      margin: 0 0 40px 0;
+   }
+
+   .phones {
+      display: flex;
+      margin: 0 0 120px 0;
+
+      >div {
+         position: relative;
+         margin: 0 80px 0 40px;
+      }
+
+      >div>span {
+         font-family: 'Rubik';
+         font-style: normal;
+         font-weight: 700;
+         font-size: 24px;
+         text-decoration: underline;
+      }
+
+      >div>p {
+         font-family: 'Rubik';
+         font-style: normal;
+         font-weight: 400;
+         font-size: 24px;
+      }
+
+      >div>img {
+         position: absolute;
+      }
+
+      .home {
+         left: -35px;
+         top: 18px;
+      }
+
+      .percent {
+         left: -35px;
+         top: 20px;
+      }
+   }
+
+   .address {
+      margin: 0 0 32px 0;
+
+      >div {
+         display: flex;
+      }
+
+      >div>div {
+         margin: 0 80px 0 40px;
+         position: relative;
+      }
+
+      >div>div>p {
+         font-family: 'Rubik';
+         font-style: normal;
+         font-weight: 400;
+         font-size: 18px;
+      }
+
+      >div>div>span {
+         font-family: 'Rubik';
+         font-style: normal;
+         font-weight: 400;
+         font-size: 18px;
+         text-decoration-line: underline;
+      }
+
+      .home {
+         position: absolute;
+         left: -35px;
+         top: 10px;
+      }
+
+      .phone {
+         position: absolute;
+         left: -35px;
+         top: 50px;
+      }
+
+      .title2 {
+         font-family: 'Rubik';
+         font-style: normal;
+         font-weight: 700;
+         font-size: 36px;
+      }
+   }
+}

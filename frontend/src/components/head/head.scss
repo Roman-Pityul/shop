@@ -1,0 +1,128 @@
+.head {
+   position: fixed;
+   top: 0;
+   left: 0;
+   display: flex;
+   align-items: center;
+   width: 100%;
+   height: 72px;
+   background-color: white;
+   box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+   z-index: 99;
+
+   &_link {
+      text-decoration: none;
+      color: black;
+   }
+
+   &_reverse {
+      transform: rotate(90deg);
+   }
+
+   &__container {
+      margin: 0 auto;
+      width: 1208px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+   }
+
+   &__buttons {
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      align-items: center;
+   }
+
+   // &__buttons:hover {
+   //    cursor: pointer;
+   //    color: #70c05b;
+   // }
+
+   &__buttons>img {
+      height: 24px;
+      width: 24px;
+   }
+
+   &__count {
+      position: absolute;
+      top: -3px;
+      left: 35px;
+      padding-bottom: 2px;
+      width: 11px;
+      height: 11px;
+      border-radius: 4px;
+      background-color: #FF6633;
+      color: #fff;
+      font-size: 9px;
+      display: flex;
+      justify-content: center;
+   }
+
+   &__catalog {
+      display: flex;
+      align-items: center;
+      width: 140px;
+      height: 40px;
+      color: white;
+      border-radius: 4px;
+      background-color: #70c05b;
+   }
+
+   &__catalog:hover {
+      cursor: pointer;
+   }
+
+   &__catalog>img {
+      width: 24px;
+      height: 24px;
+      margin: 0px 25px 0px 5px;
+   }
+
+   &__user {
+      display: flex;
+      align-items: center;
+   }
+
+   &__user>img,
+   span {
+      margin-left: 5px;
+      margin-right: 5px;
+   }
+
+   &__user-input {
+      cursor: pointer;
+   }
+
+   @media(max-width: 1200px) {
+      &__logo {
+         display: none;
+      }
+   }
+
+   @media(max-width: 1000px) {
+      .search_search {
+         width: auto;
+      }
+   }
+
+   @media(max-width: 860px) {
+      &__catalog>span {
+         display: none;
+      }
+
+      &__catalog {
+         width: auto;
+      }
+   }
+}
+
+.active {
+   color: #FF6633;
+}
+
+.noactive {
+   color: #414141;
+}
