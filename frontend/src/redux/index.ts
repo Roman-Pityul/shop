@@ -2,12 +2,14 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import itemsReducer from "./items/itemsReducer";
 import cartReducer from "./cart/cartReducer";
 import headReducer from "./head/headReducer"
+import categoriesReducer from './category/categoryReducer'
 import { useDispatch } from "react-redux";
 
 const rootReducer = combineReducers({
   items: itemsReducer,
   cart: cartReducer,
-  head: headReducer
+  head: headReducer,
+  categories: categoriesReducer
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

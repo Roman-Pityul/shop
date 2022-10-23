@@ -11,19 +11,19 @@ export const ItemsApi = {
 
   async fetchCategory(cat: string) {
     const data = await axios.get<Items[]>(
-      `${SERVER}/items?category=${cat}`
+      `${SERVER}/products/findby/${cat}`
     );
     return data;
   },
 
   async fetchOneItem(id: string) {
-    const data = await axios.get<Items>(`${SERVER}/items?id=${id}`);
+    const data = await axios.get<Items>(`${SERVER}/products/${id}`);
     return data;
   },
 
   async searchItem(value: string) {
     const data = await axios.get<Items[]>(
-      `${SERVER}/items?q=${value}`
+      `${SERVER}/products/search?query=${value}`
     );
     return data;
   },

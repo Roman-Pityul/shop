@@ -1,46 +1,29 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import classNames from "classnames";
+import React from "react"
+import { Link } from "react-router-dom"
+import { useSelector, useDispatch } from "react-redux"
+import classNames from "classnames"
 
-import logo from "../../img/head/logo.png";
-import menu from "../../img/head/menu.png";
-import avatar from "../../img/head/avatar.png";
-import button from "../../img/head/button.png";
-import { Search } from "..";
-import { Menu } from "..";
+import logo from "../../img/head/logo.png"
+import menu from "../../img/head/menu.png"
+import avatar from "../../img/head/avatar.png"
+import button from "../../img/head/button.png"
+import { Search } from ".."
+import { Menu } from ".."
 import { RootState } from '../../redux/index'
-import { addItemFromLS } from "../../redux/cart/cartReducer";
-import { setActiveIcon } from '../../redux/head/headReducer'
+import { addItemFromLS } from "../../redux/cart/cartReducer"
 import { Orders } from '../../img/head/orders'
 import { Favourites } from '../../img/head/favourites'
 import { Cart } from '../../img/head/cart'
-import { clearActiveIcon } from '../../redux/head/headReducer'
 
 import "./head.scss";
 
 const Head = () => {
-  const isMount = React.useRef(false);
-  const dispatch = useDispatch();
-  const { items } = useSelector((state: RootState) => state.cart);
+  const isMount = React.useRef(false)
+  const dispatch = useDispatch()
+  const { items } = useSelector((state: RootState) => state.cart)
   const { activeIcon } = useSelector((state: RootState) => state.head)
-  const [visible, setVisible] = React.useState(false);
-
-  const menuItems = [
-    { name: "Молоко, сыр, яйцо", path: "/items/milk-cheese-egg" },
-    { name: "Хлеб", path: "/items/bread" },
-    { name: "Фрукты и овощи", path: "/items/fruits-vegatables" },
-    { name: "Замороженные продукты", path: "/items/frozen-foods" },
-    { name: "Напитки", path: "/items/drinks" },
-    { name: "Кондитерские изделия", path: "/items/confectionery-products" },
-    { name: "Чай, кофе", path: "/items/tea-coffee" },
-    { name: "Бакалея", path: "/items/grocery" },
-    { name: "Здоровое питание", path: "/items/healthy-eating" },
-    { name: "Зоотовары", path: "/items/pet-supplies" },
-    { name: "Непродовольственные товары", path: "/items/non-food-products" },
-    { name: "Детское питание", path: "/items/baby-food" },
-    { name: "Мясо, птица, колбаса", path: "/items/meat-poultry-sausage" },
-  ];
+  const [visible, setVisible] = React.useState(false)
+  const { categories } = useSelector((state: RootState) => state.categories)
 
   React.useEffect(() => {
     if (isMount.current) {
@@ -49,10 +32,10 @@ const Head = () => {
     } else {
       const data = localStorage.getItem('items')
       if (data) {
-        dispatch(addItemFromLS(JSON.parse(data)));
+        dispatch(addItemFromLS(JSON.parse(data)))
       }
     }
-    isMount.current = true;
+    isMount.current = true
   }, [items])
 
   return (
@@ -103,9 +86,9 @@ const Head = () => {
           </div>
         </div>
       </div>
-      {visible && <Menu items={menuItems} setVisible={setVisible} />}
+      {visible && <Menu items={categories} setVisible={setVisible} />}
     </>
   );
 };
 
-export default Head;
+export default Head

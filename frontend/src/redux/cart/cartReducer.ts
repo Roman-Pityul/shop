@@ -1,6 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { totalSum } from "../../utils/totalSum";
-import { ICartState } from "./types";
+import { createSlice } from "@reduxjs/toolkit"
+import { totalSum } from "../../utils/totalSum"
+import { ICartState } from "./types"
 
 const initialState: ICartState = {
   items: [],
@@ -12,39 +12,42 @@ const cart = createSlice({
   initialState: initialState,
   reducers: {
     addItemsToCart(state, action) {
-      const findItem = state.items.find((obj) => obj.id === action.payload.id);
+      //@ts-ignore
+      const findItem = state.items.find((obj) => obj._id === action.payload._id)
       if (findItem) {
-        findItem.count++;
-        totalSum(state);
+        findItem.count++
+        totalSum(state)
       } else {
-        state.items.push({ ...action.payload, count: 1 });
-        totalSum(state);
+        state.items.push({ ...action.payload, count: 1 })
+        totalSum(state)
       }
     },
 
     addItemFromLS(state, action) {
-      state.items = action.payload;
-      totalSum(state);
+      state.items = action.payload
+      totalSum(state)
     },
 
     minusItem(state, action) {
-      const findItem = state.items.find((obj) => obj.id === action.payload);
+      //@ts-ignore
+      const findItem = state.items.find((obj) => obj._id === action.payload)
       if (findItem && findItem.count === 1) {
-        return;
+        return
       } else {
-        findItem && findItem.count--;
-        totalSum(state);
+        findItem && findItem.count--
+        totalSum(state)
       }
     },
 
     deleteItem(state, action) {
-      state.items = state.items.filter((obj) => obj.id !== action.payload);
-      totalSum(state);
+      //@ts-ignore
+      state.items = state.items.filter((obj) => obj._id !== action.payload)
+      totalSum(state)
     },
 
     clearItems(state) {
-      state.items = [];
-      state.totalPrice = 0;
+      state.items = []
+      state.totalPrice = 0
     },
   },
 });
@@ -56,4 +59,4 @@ export const {
   deleteItem,
   addItemFromLS,
 } = cart.actions;
-export default cart.reducer;
+export default cart.reducer

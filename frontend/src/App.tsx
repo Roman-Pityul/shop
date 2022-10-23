@@ -1,9 +1,9 @@
 import React from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 
 import { Container, Footer, Head } from './components'
-import { clearActiveIcon } from './redux/head/headReducer'
+import { fetchCategories } from './redux/category/asyncActions';
 
 import './App.scss'
 
@@ -22,6 +22,11 @@ const Policy = React.lazy(() => import(/*webpackChunkName: "Policy"*/'./pages/po
 
 
 function App() {
+  const dispatch = useDispatch()
+
+  React.useEffect(() => {
+    dispatch(fetchCategories())
+  }, [])
 
   return (
     <div className="app">

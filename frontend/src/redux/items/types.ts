@@ -8,14 +8,9 @@ export interface ItemsState {
 export type Items = {
   category: string;
   description: string;
-  id: string;
+  _id: string;
   img: string;
   price: string;
-  sale?: Sale;
+  sale?: string;
   count?: string;
-};
-
-type Sale = {
-  percent: string;
-  price: string;
 };

@@ -3,12 +3,18 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 import { addItemsToCart } from "../../redux/cart/cartReducer";
-import { ItemTypeProps } from '../cartItem/cartItem';
-import { } from '../../redux/items/itemsReducer'
 
 import "./item.scss";
 
-const Item: React.FC<ItemTypeProps> = ({ img, price, sale, description, id }) => {
+type ItemProps = {
+  img: string
+  price: string
+  sale?: string
+  description: string
+  _id: string
+}
+
+const Item: React.FC<ItemProps> = ({ img, price, sale, description, _id }) => {
   const dispatch = useDispatch();
 
   const item = {
@@ -16,7 +22,7 @@ const Item: React.FC<ItemTypeProps> = ({ img, price, sale, description, id }) =>
     price,
     sale,
     description,
-    id,
+    _id,
     count: 0
   };
 
@@ -28,16 +34,16 @@ const Item: React.FC<ItemTypeProps> = ({ img, price, sale, description, id }) =>
     <div className="item_wraper">
       <div className="item">
         <div className="item__image-block">
-          <Link to={`/item/${id}`}>
+          <Link to={`/item/${_id}`}>
             <img alt="img" src={img} />
           </Link>
-          {sale && <div className="item__sale">-{sale.percent}%</div>}
+          {sale && <div className="item__sale">-{sale}%</div>}
         </div>
         <div className="item__price-block">
           {sale && (
             <div className="item__price-sale">
               <p>
-                {sale.price}
+                {(Number(price) / 100 * Number(sale)).toFixed(2)}
                 <span> ₽</span>
               </p>
               <span>С картой</span>
@@ -52,7 +58,7 @@ const Item: React.FC<ItemTypeProps> = ({ img, price, sale, description, id }) =>
           </div>
         </div>
         <div className="item__text-block">
-          <Link to={`/item/${id}`}>
+          <Link to={`/item/${_id}`}>
             <p>{description}</p>
           </Link>
         </div>

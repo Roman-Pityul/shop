@@ -1,6 +1,9 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 import { Document } from 'mongoose'
 
+export type CategoryDocument = Category & Document
+
+
 @Schema()
 export class Category {
 
@@ -8,9 +11,8 @@ export class Category {
     name: string
 
     @Prop()
-    value: string
+    path: string
 }
 
 export const CategorySchema = SchemaFactory.createForClass(Category)
 
-export type CategoryDocument = Category & Document

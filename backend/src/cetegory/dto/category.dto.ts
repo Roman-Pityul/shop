@@ -1,4 +1,4 @@
 export class CategoryDto {
     readonly name
-    readonly value
+    readonly path
 }

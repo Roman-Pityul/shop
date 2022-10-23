@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post } from "@nestjs/common";
+import { Body, Controller, Get, Param, Post, Query } from "@nestjs/common";
 import { ObjectId } from "mongoose";
 import { ProductsDto } from "./dto/products.dto";
 import { ProductsService } from "./products.service";
@@ -16,6 +16,16 @@ export class ProductsController {
   @Get('/')
   getAll() {
     return this.productsService.getAll()
+  }
+
+  @Get('/findby/:category')
+  getAllByCategory(@Param('category') category: string) {
+    return this.productsService.getAllByCategory(category)
+  }
+
+  @Get('/search')
+  search(@Query('query') query: string) {
+    return this.productsService.search(query)
   }
 
   @Get('/:id')

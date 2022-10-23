@@ -4,7 +4,6 @@ import { Model, ObjectId } from "mongoose";
 import { ProductsDto } from "./dto/products.dto";
 import { Products, ProductsDocument } from "./schema/products.schema";
 
-
 @Injectable()
 export class ProductsService {
     constructor(@InjectModel(Products.name) private productsModel: Model<ProductsDocument>) { }
@@ -19,8 +18,20 @@ export class ProductsService {
         return products
     }
 
+    async getAllByCategory(category: string): Promise<Products[]> {
+        const products = await this.productsModel.find({ category })
+        return products
+    }
+
     async getOne(id: ObjectId): Promise<Products> {
         const product = await this.productsModel.findById(id)
         return product
+    }
+
+    async search(query: string): Promise<Products[]> {
+        const products = await this.productsModel.find({
+            description: { $regex: new RegExp(query, 'i') }
+        })
+        return products
     }
 }

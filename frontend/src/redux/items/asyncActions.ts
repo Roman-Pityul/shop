@@ -4,7 +4,7 @@ import { Items } from "./types";
 
 export const fetchCategory = createAsyncThunk<Items[], string>(
   "items/fetchCategory",
-  async (cat) => {
+  async (cat: string) => {
     const response = await ItemsApi.fetchCategory(cat);
     return response.data;
   }

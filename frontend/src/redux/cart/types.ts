@@ -1,4 +1,3 @@
-import { SaleType } from "../../components/cartItem/cartItem";
 
 export interface ICartState {
   items: ItemState[];
@@ -8,7 +7,7 @@ export interface ICartState {
 export type ItemState = {
   img: string;
   price: string;
-  sale: SaleType;
+  sale?: string;
   description: string;
   id?: string;
   count: number;

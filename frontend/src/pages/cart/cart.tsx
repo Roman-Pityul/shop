@@ -41,7 +41,7 @@ const Cart: React.FC = () => {
       </div>
       <div className="cart_content">
         <div className="cart_items-block">
-          {items && items.map((item: ItemTypeProps) => <CartItem key={item.id} {...item} />)}
+          {items && items.map((item: ItemTypeProps) => <CartItem key={item._id} {...item} />)}
         </div>
         <div className="cart_items-info">
           <div className="cart_items-info-row"><span className="cart_text">Товаров в корзине: </span><b>{items.length}</b></div>

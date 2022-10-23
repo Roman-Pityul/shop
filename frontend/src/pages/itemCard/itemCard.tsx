@@ -27,7 +27,7 @@ const ItemCard: React.FC = () => {
 
   const handleClickAdd = () => {
     // @ts-ignore
-    dispatch(addItemsToCart(item[0]))
+    dispatch(addItemsToCart(item))
   }
 
   return (
@@ -37,27 +37,27 @@ const ItemCard: React.FC = () => {
       ) : (
         <>
           {/* @ts-ignore */}
-          {item && item.map((elem: ItemTypeProps) => (
-            <div key={elem.id} className="itemcard">
-              <h2 className="itemcard_title">{elem.description}</h2>
+          {item &&
+            <div key={item._id} className="itemcard">
+              <h2 className="itemcard_title">{item.description}</h2>
               <div className="itemcard__content">
                 <div className="itemcard__left">
-                  <img src={elem.img} alt="item_image" />
+                  <img src={item.img} alt="item_image" />
                 </div>
                 <div className="itemcard__right">
                   <div className="itemcard__price">
                     <div className="itemcard__price-nosale">
                       <p>
-                        {elem.price}
+                        {item.price}
                         <span>₽</span>
                       </p>
                       <span>Обычная цена</span>
                     </div>
                     {/* @ts-ignore */}
-                    {item[0].sale && (
+                    {item.sale && (
                       <div className="itemcard__price-sale">
                         <p>
-                          {elem.sale?.price}
+                          {(Number(item.price) / 100 * Number(item.sale)).toFixed(2)}
                           <span>₽</span>
                         </p>
                         <span>С картой Северяночки</span>
@@ -82,7 +82,7 @@ const ItemCard: React.FC = () => {
                 </div>
               </div>
             </div>
-          ))}
+          }
         </>
       )}
     </>

@@ -9,30 +9,26 @@ import "./cartitem.scss";
 export type ItemTypeProps = {
   img: string
   price: string
-  sale: SaleType | null
+  sale?: string
   description: string
-  id?: string
+  _id?: string
   count?: number
 }
 
-export type SaleType = {
-  price: string
-  percent: string
-}
+const CartItem: React.FC<ItemTypeProps> = ({ img, price, sale, description, count, _id }) => {
 
-const CartItem: React.FC<ItemTypeProps> = ({ img, price, sale, description, count, id }) => {
   const dispatch = useDispatch()
 
   const handlePlus = () => {
-    dispatch(addItemsToCart({ id }))
+    dispatch(addItemsToCart({ _id }))
   }
 
   const handleMinus = () => {
-    dispatch(minusItem(id))
+    dispatch(minusItem(_id))
   }
 
   const handleDelete = () => {
-    dispatch(deleteItem(id))
+    dispatch(deleteItem(_id))
   }
 
   return (
@@ -61,7 +57,7 @@ const CartItem: React.FC<ItemTypeProps> = ({ img, price, sale, description, coun
         <div className="cartitem_price">
           {sale && (
             <div className="cartitem_price-sale">
-              <p>{sale.price}</p>
+              <p>{(Number(price) / 100 * Number(sale)).toFixed(2)}</p>
               <p>₽</p>
             </div>
           )}
