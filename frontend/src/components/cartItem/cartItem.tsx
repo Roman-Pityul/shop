@@ -3,6 +3,7 @@ import classNames from "classnames";
 import { useDispatch } from 'react-redux'
 
 import { addItemsToCart, minusItem, deleteItem } from '../../redux/cart/cartReducer'
+import { caclPriceWithSale } from '../../utils/calcPrice'
 
 import "./cartitem.scss";
 
@@ -57,7 +58,7 @@ const CartItem: React.FC<ItemTypeProps> = ({ img, price, sale, description, coun
         <div className="cartitem_price">
           {sale && (
             <div className="cartitem_price-sale">
-              <p>{(Number(price) / 100 * Number(sale)).toFixed(2)}</p>
+              <p>{caclPriceWithSale(price, sale)}</p>
               <p>₽</p>
             </div>
           )}

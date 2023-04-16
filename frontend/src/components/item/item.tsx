@@ -1,10 +1,11 @@
-import React from "react";
-import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import React from "react"
+import { useDispatch } from "react-redux"
+import { Link } from "react-router-dom"
 
-import { addItemsToCart } from "../../redux/cart/cartReducer";
+import { addItemsToCart } from "../../redux/cart/cartReducer"
+import { caclPriceWithSale } from "../../utils/calcPrice"
 
-import "./item.scss";
+import "./item.scss"
 
 type ItemProps = {
   img: string
@@ -43,7 +44,7 @@ const Item: React.FC<ItemProps> = ({ img, price, sale, description, _id }) => {
           {sale && (
             <div className="item__price-sale">
               <p>
-                {(Number(price) / 100 * Number(sale)).toFixed(2)}
+                {caclPriceWithSale(item.price, item.sale)}
                 <span> ₽</span>
               </p>
               <span>С картой</span>

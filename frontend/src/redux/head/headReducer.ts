@@ -3,7 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 import { HeadState } from "./types"
 
 const initialState: HeadState = {
-  activeIcon: ''
+  activeIcon: '',
+  menuVisible: false
 }
 
 const head = createSlice({
@@ -15,10 +16,13 @@ const head = createSlice({
     },
     clearActiveIcon(state) {
       state.activeIcon = ''
+    },
+    setMenuVisible(state, action) {
+      state.menuVisible = action.payload
     }
   }
 })
 
-export const { setActiveIcon, clearActiveIcon } = head.actions
+export const { setActiveIcon, clearActiveIcon, setMenuVisible } = head.actions
 
 export default head.reducer

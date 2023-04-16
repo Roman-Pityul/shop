@@ -17,6 +17,7 @@
 
    &_reverse {
       transform: rotate(90deg);
+      transition: transform 0.4s;
    }
 
    &__container {
@@ -97,24 +98,41 @@
    }
 
    @media(max-width: 1200px) {
-      &__logo {
+
+      &__container {
+         padding: 0 20px 0 20px;
+      }
+
+      &_link>div>span {
          display: none;
       }
    }
 
    @media(max-width: 1000px) {
+
       .search_search {
          width: auto;
       }
    }
 
    @media(max-width: 860px) {
+
       &__catalog>span {
          display: none;
       }
 
+      &__catalog>img {
+         margin-right: 5px;
+      }
+
       &__catalog {
          width: auto;
+      }
+   }
+
+   @media(max-width: 732px) {
+      &__logo {
+         display: none;
       }
    }
 }

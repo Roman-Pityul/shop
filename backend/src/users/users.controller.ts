@@ -1,25 +1,20 @@
-import { Body, Controller, Get, Param, Post } from "@nestjs/common";
-import { ObjectId } from "mongoose";
-import { CreateUsersDto } from "./dto/create-users.dto";
-import { UserService } from "./users.service";
+import { Body, Controller, Get, Post } from "@nestjs/common"
+import { CreateUsersDto } from "./dto/create-users.dto"
+import { LoginUserDto } from "./dto/login-user.dto"
+import { UserService } from "./users.service"
 
 @Controller('/users')
 export class UserController {
 
   constructor(private userService: UserService) { }
 
-  @Get('/')
-  getAllUsers() {
-    return this.userService.getAllUsers()
+  @Post('/registration')
+  registration(@Body() dto: CreateUsersDto) {
+    return this.userService.registration(dto)
   }
 
-  @Post('/create')
-  create(@Body() dto: CreateUsersDto) {
-    return this.userService.createUser(dto)
-  }
-
-  @Post('/getOneUser')
-  findById(@Param('id') id: ObjectId) {
-    return this.userService.findById(id)
+  @Post('/login')
+  login(@Body() dto: LoginUserDto) {
+    return this.userService.login(dto)
   }
 }

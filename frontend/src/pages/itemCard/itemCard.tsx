@@ -8,8 +8,8 @@ import bell from "../../img/bell-off.svg";
 import { fetchItem } from "../../redux/items/asyncActions";
 import { addItemsToCart } from '../../redux/cart/cartReducer'
 import { RootState } from "../../redux/index";
-import { ItemTypeProps } from "../../components/cartItem/cartItem";
 import { useAppDispatch } from "../../redux/index";
+import { caclPriceWithSale } from "../../utils/calcPrice";
 
 import "./itemCard.scss";
 
@@ -57,7 +57,7 @@ const ItemCard: React.FC = () => {
                     {item.sale && (
                       <div className="itemcard__price-sale">
                         <p>
-                          {(Number(item.price) / 100 * Number(item.sale)).toFixed(2)}
+                          {caclPriceWithSale(item.price, item.sale)}
                           <span>₽</span>
                         </p>
                         <span>С картой Северяночки</span>

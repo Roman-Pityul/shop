@@ -5,7 +5,7 @@ import { clearActiveIcon, setActiveIcon } from '../../redux/head/headReducer'
 
 import styles from './orders.module.scss'
 
-const Orders = () => {
+const Orders: React.FC = () => {
 
    const dispatch = useDispatch()
 

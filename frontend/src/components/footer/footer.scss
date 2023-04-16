@@ -35,8 +35,50 @@
       align-items: center;
    }
 
+   &__social>img {
+      margin-right: 10px;
+   }
+
    &__right>img {
       margin-right: 20px;
       cursor: pointer;
+   }
+
+   &__phone-wraper {
+      display: flex;
+      justify-content: center;
+   }
+
+   &__phone-wraper>img {
+      margin-right: 10px;
+   }
+}
+
+@media(max-width: 1200px) {
+   .footer__content {
+      padding: 30px 20px 0 20px;
+   }
+}
+
+@media(max-width: 1035px) {
+   .footer__menu {
+      display: flex;
+      flex-direction: column;
+   }
+}
+
+@media(max-width: 707px) {
+   .footer {
+      height: auto;
+      background-repeat: repeat;
+   }
+
+   .footer__right {
+      display: flex;
+      flex-direction: column-reverse;
+   }
+
+   .footer__social {
+      margin-top: 15px;
    }
 }

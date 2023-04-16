@@ -9,6 +9,6 @@ export type ItemState = {
   price: string;
   sale?: string;
   description: string;
-  id?: string;
+  _id?: string;
   count: number;
 };

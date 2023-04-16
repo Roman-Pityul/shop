@@ -4,7 +4,7 @@ import { VacancyItem } from '../../components'
 
 import styles from './vacancy.module.scss';
 
-const Vacancy = () => {
+const Vacancy: React.FC = () => {
    return (
       <div className={styles.vacancy}>
          <h1 className={styles.title}>Вакансии</h1>

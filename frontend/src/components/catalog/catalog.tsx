@@ -22,96 +22,115 @@ const Catalog: React.FC = () => {
   return (
     <>
       <h1 className="catalog__title">Каталог</h1>
-      <div className="catalog__row">
-        <Link to="/items/milk-cheese-egg">
-          <div className="catalog__row-gradient">
-            <div className="catalog__row-item">
-              <img src={milk} alt="milk" className="catalog__row-gradient" />
-              <span>Молоко, сыр, яйцо</span>
-            </div>
-          </div>
-        </Link>
-        <Link to="/items/bread">
-          <div className="catalog__row-item">
-            <img src={bread} alt="bread" />
-            <span>Хлеб</span>
-          </div>
-        </Link>
-        <Link to="/items/fruits-vegatables">
-          <div className="catalog__row-item">
-            <img src={vegatables} alt="vegatables" />
-            <span>Фрукты и овощи</span>
-          </div>
-        </Link>
-      </div>
+      <div className="catalog__wrap">
 
-      <div className="catalog__row">
-        <Link to="/items/frozen-foods">
-          <div className="catalog__row-item">
-            <img src={iceProduct} alt="iceProduct" />
-            <span>Замороженные продукты</span>
+        <div className="catalog__row row1">
+          <div>
+            <Link to="/items/milk-cheese-egg">
+              <div className="catalog__row-gradient">
+                <div className="catalog__row-item">
+                  <img src={milk} alt="milk" className="catalog__row-gradient" />
+                  <span>Молоко, сыр, яйцо</span>
+                </div>
+              </div>
+            </Link>
           </div>
-        </Link>
-        <Link to="/items/drinks">
-          <div className="catalog__row-item">
-            <img src={drinks} alt="drinks" />
-            <span>Напитки</span>
+          <div>
+            <Link to="/items/bread">
+              <div className="catalog__row-item">
+                <img src={bread} alt="bread" />
+                <span>Хлеб</span>
+              </div>
+            </Link>
+            <Link to="/items/fruits-vegatables">
+              <div className="catalog__row-item">
+                <img src={vegatables} alt="vegatables" />
+                <span>Фрукты и овощи</span>
+              </div>
+            </Link>
           </div>
-        </Link>
-        <Link to="/items/confectionery-products">
-          <div className="catalog__row-item">
-            <img src={sweet} alt="sweet" />
-            <span>Кондитерские изделия</span>
-          </div>
-        </Link>
-        <Link to="/items/tea-coffee">
-          <div className="catalog__row-item">
-            <img src={tea} alt="tea" />
-            <span>Чай, кофе</span>
-          </div>
-        </Link>
-      </div>
+        </div>
 
-      <div className="catalog__row">
-        <Link to="/items/pet-supplies">
-          <div className="catalog__row-item">
-            <img src={animals} alt="animals" />
-            <span>Зоотовары</span>
+        <div className="catalog__row row2">
+          <div>
+            <Link to="/items/frozen-foods">
+              <div className="catalog__row-item">
+                <img src={iceProduct} alt="iceProduct" />
+                <span>Замороженные продукты</span>
+              </div>
+            </Link>
+            <Link to="/items/drinks">
+              <div className="catalog__row-item">
+                <img src={drinks} alt="drinks" />
+                <span>Напитки</span>
+              </div>
+            </Link>
           </div>
-        </Link>
-        <Link to="/items/healthy-eating">
-          <div className="catalog__row-item">
-            <img src={healthy} alt="healthy" />
-            <span>Здоровое питание</span>
+          <div>
+            <Link to="/items/confectionery-products">
+              <div className="catalog__row-item">
+                <img src={sweet} alt="sweet" />
+                <span>Кондитерские изделия</span>
+              </div>
+            </Link>
+            <Link to="/items/tea-coffee">
+              <div className="catalog__row-item">
+                <img src={tea} alt="tea" />
+                <span>Чай, кофе</span>
+              </div>
+            </Link>
           </div>
-        </Link>
-        <Link to="/items/grocery">
-          <div className="catalog__row-item">
-            <img src={grocery} alt="grocery" />
-            <span>Бакалея</span>
-          </div>
-        </Link>
-      </div>
+        </div>
 
-      <div className="catalog__row">
-        <Link to="/items/baby-food">
-          <div className="catalog__row-item">
-            <img src={babys} alt="babys" />
-            <span>Детское питание</span>
+        <div className="catalog__row row3">
+          <div>
+            <Link to="/items/pet-supplies">
+              <div className="catalog__row-item">
+                <img src={animals} alt="animals" />
+                <span>Зоотовары</span>
+              </div>
+            </Link>
           </div>
-        </Link>
-        <Link to="/items/meat-poultry-sausage">
-          <div className="catalog__row-item">
-            <img src={meat} alt="meat" />
-            <span>Мясо, птица, колбаса</span>
+          <div>
+            <Link to="/items/healthy-eating">
+              <div className="catalog__row-item">
+                <img src={healthy} alt="healthy" />
+                <span>Здоровое питание</span>
+              </div>
+            </Link>
+            <Link to="/items/grocery">
+              <div className="catalog__row-item">
+                <img src={grocery} alt="grocery" />
+                <span>Бакалея</span>
+              </div>
+            </Link>
           </div>
-        </Link>
-        <Link to="/items/non-food-products">
-          <div className="catalog__row-item">
-            <img src={others} alt="others" />
-            <span>Непродовольственные товары</span>
+        </div>
+
+        <div className="catalog__row row4">
+          <div>
+            <Link to="/items/meat-poultry-sausage">
+              <div className="catalog__row-item">
+                <img src={meat} alt="meat" />
+                <span>Мясо, птица, колбаса</span>
+              </div>
+            </Link>
           </div>
-        </Link>
+          <div>
+            <Link to="/items/baby-food">
+              <div className="catalog__row-item">
+                <img src={babys} alt="babys" />
+                <span>Детское питание</span>
+              </div>
+            </Link>
+            <Link to="/items/non-food-products">
+              <div className="catalog__row-item">
+                <img src={others} alt="others" />
+                <span>Непродовольственные товары</span>
+              </div>
+            </Link>
+          </div>
+        </div>
       </div>
     </>
   );

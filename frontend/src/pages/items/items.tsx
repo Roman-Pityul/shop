@@ -59,23 +59,6 @@ const Items: React.FC = () => {
       }
     </div>
   )
-
-  // return (
-  //     <div className="items">
-  //       {isLoading
-  //         ? [...new Array(8)].map((_, index) => <ItemSkeleton key={index} />)
-  //         : items.map((elem) => (
-  //           <Item
-  //             key={elem.id}
-  //             img={elem.img}
-  //             price={elem.price}
-  //             sale={elem.sale || null}
-  //             description={elem.description}
-  //             id={elem.id}
-  //           />
-  //         ))}
-  //     </div>
-  // );
 };
 
 export default Items;

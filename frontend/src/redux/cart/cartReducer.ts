@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit"
 import { totalSum } from "../../utils/totalSum"
-import { ICartState } from "./types"
+import { ICartState, ItemState } from "./types"
 
 const initialState: ICartState = {
   items: [],
@@ -12,8 +12,7 @@ const cart = createSlice({
   initialState: initialState,
   reducers: {
     addItemsToCart(state, action) {
-      //@ts-ignore
-      const findItem = state.items.find((obj) => obj._id === action.payload._id)
+      const findItem = state.items.find((obj: ItemState) => obj._id === action.payload._id)
       if (findItem) {
         findItem.count++
         totalSum(state)
@@ -29,8 +28,7 @@ const cart = createSlice({
     },
 
     minusItem(state, action) {
-      //@ts-ignore
-      const findItem = state.items.find((obj) => obj._id === action.payload)
+      const findItem = state.items.find((obj: ItemState) => obj._id === action.payload)
       if (findItem && findItem.count === 1) {
         return
       } else {
@@ -40,8 +38,7 @@ const cart = createSlice({
     },
 
     deleteItem(state, action) {
-      //@ts-ignore
-      state.items = state.items.filter((obj) => obj._id !== action.payload)
+      state.items = state.items.filter((obj: ItemState) => obj._id !== action.payload)
       totalSum(state)
     },
 

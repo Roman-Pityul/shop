@@ -4,7 +4,7 @@ import phone from '../../img/phone2.svg'
 
 import styles from './vacancyitem.module.scss'
 
-const VacancyItem = () => {
+const VacancyItem: React.FC = () => {
    return (
       <div className={styles.item}>
          <p className={styles.title}>Должность</p>

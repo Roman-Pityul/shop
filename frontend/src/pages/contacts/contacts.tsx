@@ -6,7 +6,7 @@ import percent from '../../img/percent.svg'
 
 import styles from './contacts.module.scss'
 
-const Contacts = () => {
+const Contacts: React.FC = () => {
    return (
       <div className={styles.contacts}>
          <p className={styles.title}>Контакты</p>

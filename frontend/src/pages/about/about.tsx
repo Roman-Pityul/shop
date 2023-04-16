@@ -4,7 +4,7 @@ import check from '../../img/check.svg'
 import logo from '../../img/logo.svg'
 import styles from './about.module.scss'
 
-const About = () => {
+const About: React.FC = () => {
    return (
       <div>
          <div className={styles.head}>

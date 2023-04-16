@@ -9,7 +9,7 @@ import { searchItems } from "../../redux/items/asyncActions";
 
 import "./search.scss";
 
-const Search = () => {
+const Search: React.FC = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate()
   const [searchValue, setSearchValue] = React.useState("");
@@ -23,7 +23,6 @@ const Search = () => {
 
   const searchDebounce = React.useCallback(
     debounce((str) => {
-      // @ts-ignore
       dispatch(searchItems(str));
     }, 500),
     []

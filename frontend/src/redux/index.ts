@@ -4,11 +4,13 @@ import cartReducer from "./cart/cartReducer";
 import headReducer from "./head/headReducer"
 import categoriesReducer from './category/categoryReducer'
 import { useDispatch } from "react-redux";
+import usersReducer from "./users/userReducer"
 
 const rootReducer = combineReducers({
   items: itemsReducer,
   cart: cartReducer,
   head: headReducer,
+  user: usersReducer,
   categories: categoriesReducer
 });
 

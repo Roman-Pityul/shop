@@ -1,11 +1,15 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from "react"
+import { Link } from "react-router-dom"
+import { useDispatch, useSelector } from "react-redux"
+import cn from 'classnames'
+
+import { setMenuVisible } from "../../redux/head/headReducer"
+import { selectMenuVisible } from "../../redux/head/selectors"
 
 import "./menu.scss";
 
 type MenuType = {
    items: ItemType[]
-   setVisible: any
 }
 
 type ItemType = {
@@ -13,40 +17,17 @@ type ItemType = {
    name: string
 }
 
-type ClickOutside = MouseEvent & {
-   path: Node[]
-}
+const Menu: React.FC<MenuType> = ({ items }) => {
 
-const Menu: React.FC<MenuType> = ({ items, setVisible }) => {
-   const menuRef = React.useRef<HTMLDivElement>(null);
-
-   const clickOutside = React.useCallback(
-      (e: MouseEvent) => {
-         const _e = e as ClickOutside
-         if (menuRef.current && !_e.path.includes(menuRef.current)) {
-            setVisible(false);
-         }
-      },
-      [setVisible]
-   );
+   const dispatch = useDispatch()
+   const nemuVisible = useSelector(selectMenuVisible)
 
    const handleOffVisible = () => {
-      setVisible(false);
+      dispatch(setMenuVisible(false))
    };
 
-   const elem = document.querySelector("body")
-
-   React.useEffect(() => {
-      if (elem) {
-         elem.addEventListener("click", clickOutside);
-         return () =>
-            elem.removeEventListener("click", clickOutside);
-      }
-
-   }, [clickOutside]);
-
    return (
-      <div ref={menuRef} className="menu">
+      <div className={cn('menu', { 'menu__active': nemuVisible })}>
          <div className="menu__container">
             {items.map((item, index: number) => (
                <div
@@ -58,6 +39,7 @@ const Menu: React.FC<MenuType> = ({ items, setVisible }) => {
                </div>
             ))}
          </div>
+         <div onClick={handleOffVisible} className="menu__content"></div>
       </div>
    );
 };

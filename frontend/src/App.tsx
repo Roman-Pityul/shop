@@ -7,19 +7,18 @@ import { fetchCategories } from './redux/category/asyncActions';
 
 import './App.scss'
 
-const Home = React.lazy(() => import(/*webpackChunkName: "Home"*/'./pages/home'))
-const Items = React.lazy(() => import(/*webpackChunkName: "Items"*/'./pages/items'))
-const ItemCard = React.lazy(() => import(/*webpackChunkName: "ItemCard"*/'./pages/itemCard'))
-const Cart = React.lazy(() => import(/*webpackChunkName: "Cart"*/'./pages/cart'))
-const Orders = React.lazy(() => import(/*webpackChunkName: "Orders"*/'./pages/orders'))
-const About = React.lazy(() => import(/*webpackChunkName: "About"*/'./pages/about'))
-const Contacts = React.lazy(() => import(/*webpackChunkName: "Contacts"*/'./pages/contacts'))
-const Vacancy = React.lazy(() => import(/*webpackChunkName: "Vacancy"*/'./pages/vacancy'))
-const Favourites = React.lazy(() => import(/*webpackChunkName: "Favourites"*/'./pages/favourites'))
-const Articles = React.lazy(() => import(/*webpackChunkName: "Articles"*/'./pages/articles'))
-const Policy = React.lazy(() => import(/*webpackChunkName: "Policy"*/'./pages/policy'))
-
-
+const Home = React.lazy(() => import(/*webpackChunkName: "Home"*/'./pages/home/home'))
+const Items = React.lazy(() => import(/*webpackChunkName: "Items"*/'./pages/items/items'))
+const ItemCard = React.lazy(() => import(/*webpackChunkName: "ItemCard"*/'./pages/itemCard/itemCard'))
+const Cart = React.lazy(() => import(/*webpackChunkName: "Cart"*/'./pages/cart/cart'))
+const Orders = React.lazy(() => import(/*webpackChunkName: "Orders"*/'./pages/orders/orders'))
+const About = React.lazy(() => import(/*webpackChunkName: "About"*/'./pages/about/about'))
+const Contacts = React.lazy(() => import(/*webpackChunkName: "Contacts"*/'./pages/contacts/contacts'))
+const Vacancy = React.lazy(() => import(/*webpackChunkName: "Vacancy"*/'./pages/vacancy/vacancy'))
+const Favourites = React.lazy(() => import(/*webpackChunkName: "Favourites"*/'./pages/favourites/favourites'))
+const Articles = React.lazy(() => import(/*webpackChunkName: "Articles"*/'./pages/articles/articles'))
+const Policy = React.lazy(() => import(/*webpackChunkName: "Policy"*/'./pages/policy/policy'))
+const Login = React.lazy(() => import(/*webpackChunkName: "Login"*/'./pages/login/login'))
 
 function App() {
   const dispatch = useDispatch()
@@ -48,6 +47,7 @@ function App() {
                 <Route path='favourites' element={<Favourites />} />
                 <Route path='articles' element={<Articles />} />
                 <Route path='policy' element={<Policy />} />
+                <Route path='login' element={<Login />} />
               </Route>
             </Routes>
           </React.Suspense>
