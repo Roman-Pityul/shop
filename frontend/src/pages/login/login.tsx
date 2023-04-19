@@ -1,26 +1,12 @@
 import React from 'react'
-import {useForm, SubmitHandler} from 'react-hook-form'
 
 import styles from './login.module.scss'
 import { validationEmail } from '../../helpers/validationEmail'
 import {useAuth} from './use.auth'
 
-type InputFieldsType = {
-  email: string
-  password: string
-}
-
 const Login: React.FC = () => {
 
-  const {login} = useAuth()
-
-  const {register: registerInput, handleSubmit, formState: {errors}} = useForm<InputFieldsType>({
-    mode: 'onChange'
-  })
-
-  const onSubmit = (data: InputFieldsType) => {
-    login(data)
-  }
+  const { registerInput, handleSubmit, errors, onSubmit} = useAuth()
 
   return (
     <div className={styles.login}>

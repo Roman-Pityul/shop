@@ -13,11 +13,12 @@ instance.interceptors.request.use((config) => {
 
 instance.interceptors.response.use(
   (config) => {
+    console.log(config)
     return config
   }, 
   async (error) => {
+    console.log(error)
   }
-  
 )
 
 export default instance

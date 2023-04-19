@@ -1,4 +1,4 @@
-import { HttpException, HttpStatus, Injectable, UnauthorizedException  } from "@nestjs/common"
+import { HttpException, HttpStatus, Injectable } from "@nestjs/common"
 import { InjectModel } from "@nestjs/mongoose";
 import * as bcrypt from 'bcrypt'
 import{ JwtService} from '@nestjs/jwt'
@@ -30,11 +30,11 @@ export class UserService {
   async login(dto: LoginUserDto) {
     const user = await this.userModel.findOne({ email: dto.email })
     if (!user) {
-      throw new UnauthorizedException('Пользователь не найден')
+      throw new HttpException('Не корректные данные для входа', HttpStatus.FORBIDDEN)
     }
     const checkPass = await bcrypt.compare(dto.password, user.password)
     if (!checkPass) {
-      throw new UnauthorizedException('Не корректные данные для входа')
+      throw new HttpException('Не корректные данные для входа', HttpStatus.FORBIDDEN)
     }
     const tokens = await this.issueTokenPair(user.id)
     return JSON.stringify({...tokens, userId: user._id, userName: user.name })
