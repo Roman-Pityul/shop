@@ -2,6 +2,7 @@ import { useForm } from 'react-hook-form'
 import {UserLoginDataType} from '../../api/types'
 import { userApi } from '../../api/userApi'
 import { InputFieldsType } from './types'
+import {useMutation, useQuery} from 'react-query'
 
 export const useAuth =  () => {
   const login = (userData: UserLoginDataType) => {
@@ -13,8 +14,9 @@ export const useAuth =  () => {
     mode: 'onChange'
   })
 
-  const onSubmit = (data: InputFieldsType) => {
-    login(data)
+  const onSubmit = (userData: InputFieldsType) => {
+    const {data} = useMutation(["login", userData], () => login(userData))
+    console.log(data)
   }
 
 
