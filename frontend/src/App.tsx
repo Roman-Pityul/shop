@@ -1,9 +1,9 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom'
-import { useDispatch } from 'react-redux';
-
+import { useDispatch } from 'react-redux'
 import { Container, Footer, Head } from './components'
-import { fetchCategories } from './redux/category/asyncActions';
+import { fetchCategories } from './redux/category/asyncActions'
+import { Toast } from './components';
 
 import './App.scss'
 
@@ -30,6 +30,7 @@ function App() {
   return (
     <div className="app">
       <Head />
+      <Toast />
       <div className='wraper'>
         <div>
           <React.Suspense fallback={<></>}>

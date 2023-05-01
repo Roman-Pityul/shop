@@ -1,12 +1,11 @@
 import React from 'react'
-
 import styles from './login.module.scss'
 import { validationEmail } from '../../helpers/validationEmail'
-import {useAuth} from './use.auth'
+import {UseAuth} from './useAuth'
 
 const Login: React.FC = () => {
 
-  const { registerInput, handleSubmit, errors, onSubmit} = useAuth()
+  const { registerInput, handleSubmit, errors, onSubmit} = UseAuth()
 
   return (
     <div className={styles.login}>
