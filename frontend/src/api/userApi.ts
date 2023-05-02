@@ -1,5 +1,4 @@
 import axiosClassik from "./axios/axios"
-import axios from "axios"
 
 import { SERVER } from '../helpers/constants'
 import { UserLoginDataType, UserReturnLoginType } from "./types"
