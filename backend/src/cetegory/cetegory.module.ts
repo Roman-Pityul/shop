@@ -12,6 +12,4 @@ import {Category, CategorySchema} from "./schema/category.schema";
     controllers: [CategoryController],
     providers: [CategoryService]
 })
-export class CategoryModule {
-
-}
+export class CategoryModule {}
