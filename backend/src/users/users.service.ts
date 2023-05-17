@@ -16,13 +16,13 @@ export class UserService {
     )  { }
 
   async registration(dto: CreateUsersDto): Promise<User> {
-    const { email, password, name } = dto
+    const { email, password, name, role } = dto
     const candidate = await this.userModel.findOne({ email })
     if (candidate) {
       throw new HttpException('Пользователь уже создан', HttpStatus.FORBIDDEN)
     }
     const hashedPassword = await bcrypt.hash(password, 12)
-    const user = new this.userModel({ email, password: hashedPassword, name })
+    const user = new this.userModel({ email, password: hashedPassword, name, role })
     await user.save()
     throw new HttpException('Пользователь зарегистрирован', HttpStatus.CREATED)
   }

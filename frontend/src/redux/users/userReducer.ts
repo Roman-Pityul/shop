@@ -4,7 +4,6 @@ import { UserState } from "./types";
 const initialState: UserState = {
   user: null,
   userId: null,
-  token: null
 }
 
 const user = createSlice({
@@ -12,7 +11,7 @@ const user = createSlice({
   initialState: initialState,
   reducers: {
     login() {
-
+      
     }
   },
   extraReducers: (builder) => {

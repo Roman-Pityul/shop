@@ -13,13 +13,15 @@ export class FilesService {
   async saveFile(res, file: Express.Multer.File): Promise<FilesDto> {
     const uploadFolder = `${path}/uploads`
     await ensureDir(uploadFolder)
-    await writeFile(`${uploadFolder}/${file.originalname}`, file.buffer)
-    const resp = this.filesModel.create({
+    try{
+      await writeFile(`${uploadFolder}/${file.originalname}`, file.buffer)
+      const resp = await this.filesModel.create({
       fileName: `${file.originalname}`,
       fileLink: `uploads/${file.originalname}`
-    })
-    return res.status(200).json({
-      resp
-    })
+      })
+      return res.status(200).send(resp)
+    }catch (e) {
+      return res.status(500).json({error: e, message: "Что-то пошло не так...."})
+    }
   }
 }
