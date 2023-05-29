@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form'
 import { userApi } from '../../api/userApi'
 import { InputFieldsType } from './types'
 import {toast} from 'react-toastify'
-import Cookies from 'js-cookie'
+import { saveTokensToCookie, saveUserToStorage } from '../../helpers/localStorage'
 
 export const UseAuth =  () => {
 
@@ -13,8 +13,8 @@ export const UseAuth =  () => {
   const onSubmit = async (userData: InputFieldsType) => {
     try{
       const res = await userApi.login(userData)
-      Cookies.set('accessToken', res.accessToken)
-      Cookies.set('refreshToken', res.refreshToken)
+      saveTokensToCookie(res)
+      saveUserToStorage(res)
     } catch(e) {
       toast.error("Не верные учетные данные")
     }

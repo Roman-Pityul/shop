@@ -4,6 +4,6 @@ const getUserState = (state: RootState) => {
   return state.user
 }
 
-export const getUserId = (state: RootState) => {
-  return getUserState(state).userId
+export const getUser = (state: RootState) => {
+  return getUserState(state).user
 }

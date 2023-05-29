@@ -12,5 +12,7 @@ export { default as VacancyItem } from "./vacancyItem/vacancyItem";
 export { default as Pagination } from "./pagination/pagination";
 export { default as ItemsContainer } from "./itemsContainer/itemsContainer";
 export { default as Toast } from './toast/toastr'
+export { default as UserMenu } from './userMenu/userMenu'
+
 
 

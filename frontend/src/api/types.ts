@@ -1,3 +1,5 @@
+import { User } from "../redux/users/types"
+
 export type UserLoginDataType = {
   email: string
   password: string
@@ -9,8 +11,9 @@ export type UserRegistrationDataType = {
   name: string
 }
 
-export type UserReturnLoginType = {
+export type TokensType = {
   refreshToken: string
   accessToken: string
-  userId: string
 }
+
+export type UserReturnLoginType = User & TokensType

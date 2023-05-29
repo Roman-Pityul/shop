@@ -1,10 +1,10 @@
 
 export type UserState = {
   user: User | null,
-  userId: string | null,
+  isLoading: boolean
 }
 
-type User = {
-  name: string,
-  email: string
+export type User = {
+  userId: string
+  userName: string
 }
