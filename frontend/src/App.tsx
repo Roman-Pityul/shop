@@ -1,9 +1,10 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Container, Footer, Head } from './components'
 import { fetchCategories } from './redux/category/asyncActions'
 import { Toast } from './components';
+import { getUser } from './redux/users/selectors';
 
 import './App.scss'
 
@@ -19,9 +20,13 @@ const Favourites = React.lazy(() => import(/*webpackChunkName: "Favourites"*/'./
 const Articles = React.lazy(() => import(/*webpackChunkName: "Articles"*/'./pages/articles/articles'))
 const Policy = React.lazy(() => import(/*webpackChunkName: "Policy"*/'./pages/policy/policy'))
 const Login = React.lazy(() => import(/*webpackChunkName: "Login"*/'./pages/login/login'))
+const AddItem = React.lazy(() => import(/*webpackChunkName: "AddItem"*/'./pages/addItem/addItem'))
+
 
 function App() {
   const dispatch = useDispatch()
+
+	// const user = useSelector(getUser)
 
   React.useEffect(() => {
     dispatch(fetchCategories())
@@ -49,6 +54,8 @@ function App() {
                 <Route path='articles' element={<Articles />} />
                 <Route path='policy' element={<Policy />} />
                 <Route path='login' element={<Login />} />
+                <Route path='additem' element={<AddItem />} />
+                {/* {!user && <Route path='login' element={<Login />} />} */}
               </Route>
             </Routes>
           </React.Suspense>

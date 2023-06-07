@@ -10,4 +10,6 @@ export { default as Favourites } from "./favourites/favourites";
 export { default as Articles } from "./articles/articles";
 export { default as Policy } from "./policy/policy";
 export { default as Login } from "./login/login";
+export { default as AddItem } from './addItem/addItem'
+
 

@@ -4,19 +4,24 @@ import { getLocalStorage } from "../../helpers/localStorage";
 
 const initialState: UserState = {
   user: getLocalStorage('user'),
-  isLoading: false
+  isLoading: false,
+  showUserMenu: false
 }
 
 const user = createSlice({
   name: "user",
   initialState: initialState,
   reducers: {
-    login() {}
+    setShowUserMenu (state, action) {
+      state.showUserMenu = action.payload
+    }
   },
   extraReducers: (builder) => {
     
   }
 })
+
+export const {setShowUserMenu} = user.actions
 
 export default user.reducer
 

@@ -21,6 +21,7 @@
    }
 
    &__container {
+      position: relative;
       margin: 0 auto;
       width: 1208px;
       display: flex;
@@ -36,11 +37,6 @@
       flex-direction: column;
       align-items: center;
    }
-
-   // &__buttons:hover {
-   //    cursor: pointer;
-   //    color: #70c05b;
-   // }
 
    &__buttons>img {
       height: 24px;
@@ -85,6 +81,7 @@
    &__user {
       display: flex;
       align-items: center;
+      cursor: pointer;
    }
 
    &__user>img,
@@ -94,7 +91,14 @@
    }
 
    &__user-input {
-      cursor: pointer;
+      // cursor: pointer;
+      transition: transform 0.4s;
+   }
+
+   &__user-input-reverse {
+      // cursor: pointer;
+      transform: rotate(180deg);
+      transition: transform 0.4s;
    }
 
    @media(max-width: 1200px) {

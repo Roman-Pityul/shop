@@ -4,7 +4,7 @@ import { InputFieldsType } from './types'
 import {toast} from 'react-toastify'
 import { saveTokensToCookie, saveUserToStorage } from '../../helpers/localStorage'
 
-export const UseAuth =  () => {
+export const UseAuth = () => {
 
   const {register: registerInput, handleSubmit, formState: {errors}} = useForm<InputFieldsType>({
     mode: 'onChange'

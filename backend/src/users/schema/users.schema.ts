@@ -1,11 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 import { Document } from 'mongoose'
 
-export enum userRoles {
-  USER = "USER",
-  ADMIN = "ADMIN"
-}
-
 export type UserDocument = User & Document
 
 @Schema()
@@ -21,7 +16,10 @@ export class User {
   name: string
 
   @Prop()
-  role: userRoles
+  isAdmin: boolean 
+
+  @Prop()
+  logoImg: string 
 
 }
 

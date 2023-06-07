@@ -7,3 +7,7 @@ const getUserState = (state: RootState) => {
 export const getUser = (state: RootState) => {
   return getUserState(state).user
 }
+
+export const getShowUserMenu = (state: RootState) => {
+  return getUserState(state).showUserMenu
+}

@@ -1,7 +1,8 @@
 import React from 'react'
-import styles from './login.module.scss'
 import { validationEmail } from '../../helpers/validationEmail'
 import {UseAuth} from './useAuth'
+
+import styles from './login.module.scss'
 
 const Login: React.FC = () => {
 
@@ -51,6 +52,7 @@ const Login: React.FC = () => {
           {errors.password && <div style={{color: "red"}}>{errors.password.message}</div>}
 
           <button type='submit'>Войти</button>
+
         </div>
       </form>
     </div>

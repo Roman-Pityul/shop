@@ -10,8 +10,9 @@ import { ensureDir, writeFile } from 'fs-extra';
 export class FilesService {
   constructor(@InjectModel(Files.name) private filesModel: Model<FilesDocument> ) {}
 
-  async saveFile(res, file: Express.Multer.File): Promise<FilesDto> {
-    const uploadFolder = `${path}/uploads`
+  async saveFile(res, file: Express.Multer.File, folder: string = 'default'): Promise<FilesDto> {
+    console.log('folder', folder)
+    const uploadFolder = `${path}/uploads/${folder}`
     await ensureDir(uploadFolder)
     try{
       await writeFile(`${uploadFolder}/${file.originalname}`, file.buffer)
@@ -19,7 +20,7 @@ export class FilesService {
       fileName: `${file.originalname}`,
       fileLink: `uploads/${file.originalname}`
       })
-      return res.status(200).send(resp)
+      return res.status(200).json({res: resp, message: 'Файл успешно загружен.'})
     }catch (e) {
       return res.status(500).json({error: e, message: "Что-то пошло не так...."})
     }

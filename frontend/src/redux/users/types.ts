@@ -1,7 +1,8 @@
 
 export type UserState = {
   user: User | null,
-  isLoading: boolean
+  isLoading: boolean,
+  showUserMenu: boolean
 }
 
 export type User = {

@@ -1,0 +1,28 @@
+.root{
+  div {
+    max-width: 370px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 15px 0;
+  }
+  div>select{
+    width: 238px;
+  }
+  div>input {
+    width: 230px;
+  }
+  div>input:focus, select:focus{
+    outline: none;
+  }
+  button{
+    background-color: #70c05b;
+    margin: 15px 0 0 0;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    width: 140px;
+    height: 40px;
+    cursor: pointer;
+  }
+}

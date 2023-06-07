@@ -1,5 +1,5 @@
-import { Controller, Post, UseInterceptors, UploadedFile, Res } from '@nestjs/common';
-import { ApiBody, ApiConsumes, ApiTags } from '@nestjs/swagger';
+import { Controller, Post, UseInterceptors, UploadedFile, Res, Query } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import { FilesService } from './files.service';
 import { FileInterceptor } from '@nestjs/platform-express';
 
@@ -10,7 +10,10 @@ export class FilesController {
 
   @Post('/upload')
   @UseInterceptors(FileInterceptor('image'))
-  async uploadFile(@Res() res, @UploadedFile() file: Express.Multer.File) {
-    this.filesService.saveFile(res, file)
+  async uploadFile(
+    @Res() res, 
+    @UploadedFile() file: Express.Multer.File, 
+    @Query('folder') folder?: string) {
+    this.filesService.saveFile(res, file, folder)
   }
 }

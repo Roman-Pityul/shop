@@ -7,17 +7,18 @@ import logo from '../../img/head/logo.png'
 import menu from '../../img/head/menu.png'
 import avatar from '../../img/head/avatar.png'
 import button from '../../img/head/button.png'
-import { Search } from '..'
+import { Search, UserMenu } from '..'
 import { Menu } from '..'
 import { addItemFromLS } from '../../redux/cart/cartReducer'
 import { setMenuVisible } from '../../redux/head/headReducer'
 import { Orders } from '../../img/head/orders'
 import { Favourites } from '../../img/head/favourites'
 import { Cart } from '../../img/head/cart'
-import { getUser } from '../../redux/users/selectors'
+import { getUser, getShowUserMenu } from '../../redux/users/selectors'
 import { selectItems } from '../../redux/cart/selectors'
 import { selectCategories } from '../../redux/category/selectors'
 import { selectActiveIcon, selectMenuVisible } from '../../redux/head/selectors'
+import { setShowUserMenu } from '../../redux/users/userReducer'
 
 import './head.scss'
 
@@ -25,6 +26,7 @@ const Head: React.FC = () => {
 	const isMount = React.useRef(false)
 	const dispatch = useDispatch()
 	const user = useSelector(getUser)
+	const showUserMenu = useSelector(getShowUserMenu)
 	const items = useSelector(selectItems)
 	const activeIcon = useSelector(selectActiveIcon)
 	const categories = useSelector(selectCategories)
@@ -98,12 +100,13 @@ const Head: React.FC = () => {
 						</div>
 					</Link>
 					{user && (
-						<div className="head__user">
+						<div className="head__user" onClick={() => dispatch(setShowUserMenu(!showUserMenu))}>
 							<img src={avatar} alt="User" />
 							<span>Роман</span>
-							<img className="head__user-input" src={button} alt="Button" />
+							<img className={classNames('head__user-input',{'head__user-input-reverse': showUserMenu})} src={button} alt="Button" />
 						</div>
 					)}
+					{showUserMenu && <UserMenu />}
 				</div>
 			</div>
 			<Menu items={categories} />
