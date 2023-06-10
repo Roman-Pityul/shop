@@ -14,6 +14,6 @@ export class FilesController {
     @Res() res, 
     @UploadedFile() file: Express.Multer.File, 
     @Query('folder') folder?: string) {
-    this.filesService.saveFile(res, file, folder)
+    return this.filesService.saveFile(res, file, folder)
   }
 }

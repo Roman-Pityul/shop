@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post, Query } from "@nestjs/common";
+import { Body, Controller, Get, Param, Post, Query, Res } from "@nestjs/common";
 import { ObjectId } from "mongoose";
 import { ProductsDto } from "./dto/products.dto";
 import { ProductsService } from "./products.service";
@@ -12,8 +12,8 @@ export class ProductsController {
 
   @Post('/create')
   @ApiBody({type: ProductsDto})
-  create(@Body() dto: ProductsDto) {
-    return this.productsService.create(dto)
+  create(@Res() res, @Body() dto: ProductsDto) {
+    return this.productsService.create(res, dto)
   }
 
   @Get('/')
