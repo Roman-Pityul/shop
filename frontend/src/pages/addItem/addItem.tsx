@@ -78,18 +78,14 @@ const AddItem: React.FC = () => {
 					<div className={style.uploadButton} onClick={handleClick}>
 						Загрузить файл
 					</div>
+
 					<input
-						{...register('img', {
-							required: 'Обязательно поле!',
-						})}
 						type="file"
 						name="img"
 						ref={fileInput}
 					/>
+
 				</div>
-
-				{errors.img && <div style={{ color: 'red' }}>{errors.img.message}</div>}
-
 				<button type="submit">Добавить товар</button>
 			</form>
 		</div>

@@ -6,11 +6,11 @@ import axiosOrigyn from "../../api/axios/axios"
 import { useForm } from "react-hook-form"
 
 type InputFields = {
+  e: ChangeEvent<HTMLInputElement>
   name: string
   category: string
   price: string
   sale?: string
-  img: File
 }
 
 export const useAddItem = () => {
@@ -21,8 +21,7 @@ export const useAddItem = () => {
   })
 
   const onSubmit = (data: InputFields) => {
-    const resp = uploadImage(data.img)
-    console.log('RESP', resp)
+    // console.log('file', data.e.target.file)
   }
 
   const {mutateAsync, isLoading} = useMutation(
