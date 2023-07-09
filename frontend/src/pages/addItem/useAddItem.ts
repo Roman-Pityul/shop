@@ -1,16 +1,35 @@
 import { useSelector } from "react-redux"
 import { selectCategories } from "../../redux/category/selectors"
-import { ChangeEvent } from "react"
 import { useMutation } from "react-query"
 import axiosOrigyn from "../../api/axios/axios"
 import { useForm } from "react-hook-form"
+import axios from "axios"
+import { ChangeEvent } from "react"
+import React from "react"
+import { Category } from "../../redux/category/types"
 
 type InputFields = {
-  e: ChangeEvent<HTMLInputElement>
-  name: string
+  description: string
   category: string
   price: string
   sale?: string
+  file: any
+}
+
+type UploadFileResponse = {
+  res: {
+    fileName: string
+    fileLink: string
+  }
+  message: string
+}
+
+type CreateProduct = {
+  description: string
+  category: string
+  price: string
+  sale?: string
+  img: string
 }
 
 export const useAddItem = () => {
@@ -20,38 +39,38 @@ export const useAddItem = () => {
     mode: 'onChange'
   })
 
-  const onSubmit = (data: InputFields) => {
-    // console.log('file', data.e.target.file)
+  const onSubmit = async (data: InputFields) => {
+    const formData = new FormData()
+    formData.append('image', data.file[0])
+    const fileName = await uploadFile(formData)
+    mutateAsync({
+      description: data.description,
+      category: selectCategory(data.category),
+      price: data.price,
+      sale: data.sale,
+      img: fileName
+    })
+  }
+
+  const uploadFile = async (file: FormData) => {
+    const resp = await axios.post<UploadFileResponse>('http://localhost:5000/files/upload', file)
+    return resp.data.res.fileLink
+  }
+
+  const selectCategory = (catName: string) => {
+    const cat = categories.filter(c => c.name == catName)
+    return String(cat[0].path)
   }
 
   const {mutateAsync, isLoading} = useMutation(
-    'uploadFile',
-    (data: FormData) => axiosOrigyn.post('http://localhost:5000/files/upload', data),
+    'create product',
+    (data: CreateProduct) => axiosOrigyn.post('http://localhost:5000/products/create', data),
     {
       onSuccess(data) {
         console.log('data',data)
       }
     }
   )
-  
-  const uploadImage = async (file: File) => {
-    
-    if(file) {
-      const formData = new FormData()
-      formData.append('image', file)
-      return await mutateAsync(formData)
-    }
-  }
 
-
-  // const uploadImage = async (e: ChangeEvent<HTMLInputElement>) => {
-  //   const files = e.target.files
-  //   if(files?.length) {
-  //     const formData = new FormData()
-  //     formData.append('image', files[0])
-  //     await mutateAsync(formData)
-  //   }
-  // }
-
-  return {categories, uploadImage, isLoading, register, handleSubmit, onSubmit, errors}
+  return {categories, isLoading, register, handleSubmit, onSubmit, errors}
 }

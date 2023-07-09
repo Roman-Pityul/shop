@@ -1,17 +1,12 @@
-import React from 'react'
+import React, { ChangeEvent } from 'react'
 
-import style from './addItem.module.scss'
 import { useAddItem } from './useAddItem'
 
+import style from './addItem.module.scss'
+
 const AddItem: React.FC = () => {
-	const fileInput = React.useRef<HTMLInputElement>(null)
 
-	const { categories, uploadImage, register, errors, handleSubmit, onSubmit } =
-		useAddItem()
-
-	const handleClick = () => {
-		fileInput.current?.click()
-	}
+	const { categories, register, errors, handleSubmit, onSubmit } = useAddItem()
 
 	return (
 		<div className={style.root}>
@@ -21,23 +16,27 @@ const AddItem: React.FC = () => {
 				<div>
 					<label>Название:</label>
 					<input
-						{...register('name', {
+						{...register('description', {
 							required: 'Обязательное поле!',
 						})}
 						type="text"
-						name="name"
+						name="description"
 						placeholder="Введите название"
 					/>
 				</div>
 
-				{errors.name && (
-					<div style={{ color: 'red' }}>{errors.name.message}</div>
+				{errors.description && (
+					<div style={{ color: 'red' }}>{errors.description.message}</div>
 				)}
 
 				<div>
 					<label>Категория:</label>
-					<select {...register('category')} name="category">
-						{categories && categories.map((cat) => <option>{cat.name}</option>)}
+					<select {...register('category', {
+						required: "Обязательное поле!"
+					})} 
+						name="category">
+						{categories && categories.map((cat) => 
+							<option selected={cat.name == 'Хлеб'}>{cat.name}</option>)}
 					</select>
 				</div>
 
@@ -75,14 +74,13 @@ const AddItem: React.FC = () => {
 
 				<div>
 					<label>Изображение:</label>
-					<div className={style.uploadButton} onClick={handleClick}>
-						Загрузить файл
-					</div>
 
 					<input
+					{...register('file',{
+						required: 'Обязательное поле!'
+					})}
 						type="file"
-						name="img"
-						ref={fileInput}
+						name="file"
 					/>
 
 				</div>

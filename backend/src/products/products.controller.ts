@@ -1,8 +1,9 @@
-import { Body, Controller, Get, Param, Post, Query, Res } from "@nestjs/common";
+import { Body, Controller, Get, Param, Post, Query, Res, UploadedFile, UseInterceptors } from "@nestjs/common";
 import { ObjectId } from "mongoose";
 import { ProductsDto } from "./dto/products.dto";
 import { ProductsService } from "./products.service";
 import { ApiBody, ApiTags } from "@nestjs/swagger";
+import { FileInterceptor } from "@nestjs/platform-express";
 
 
 @Controller('/products')
@@ -11,9 +12,10 @@ export class ProductsController {
   constructor(private productsService: ProductsService) { }
 
   @Post('/create')
+  @UseInterceptors(FileInterceptor('image'))
   @ApiBody({type: ProductsDto})
-  create(@Res() res, @Body() dto: ProductsDto) {
-    return this.productsService.create(res, dto)
+  create(@Body() dto: ProductsDto) {
+    return this.productsService.create(dto)
   }
 
   @Get('/')

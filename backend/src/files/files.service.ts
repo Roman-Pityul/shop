@@ -11,7 +11,6 @@ export class FilesService {
   constructor(@InjectModel(Files.name) private filesModel: Model<FilesDocument> ) {}
 
   async saveFile(res, file: Express.Multer.File, folder: string = 'default'): Promise<FilesDto> {
-    console.log('folder', folder)
     const uploadFolder = `${path}/uploads/${folder}`
     await ensureDir(uploadFolder)
     try{
