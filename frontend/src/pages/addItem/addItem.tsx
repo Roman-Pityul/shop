@@ -1,11 +1,10 @@
-import React, { ChangeEvent } from 'react'
+import React from 'react'
 
 import { useAddItem } from './useAddItem'
 
 import style from './addItem.module.scss'
 
 const AddItem: React.FC = () => {
-
 	const { categories, register, errors, handleSubmit, onSubmit } = useAddItem()
 
 	return (
@@ -31,12 +30,16 @@ const AddItem: React.FC = () => {
 
 				<div>
 					<label>Категория:</label>
-					<select {...register('category', {
-						required: "Обязательное поле!"
-					})} 
-						name="category">
-						{categories && categories.map((cat) => 
-							<option selected={cat.name == 'Хлеб'}>{cat.name}</option>)}
+					<select
+						{...register('category', {
+							required: 'Обязательное поле!',
+						})}
+						name="category"
+					>
+						{categories &&
+							categories.map((cat) => (
+								<option selected={cat.name === 'Хлеб'}>{cat.name}</option>
+							))}
 					</select>
 				</div>
 
@@ -74,15 +77,13 @@ const AddItem: React.FC = () => {
 
 				<div>
 					<label>Изображение:</label>
-
 					<input
-					{...register('file',{
-						required: 'Обязательное поле!'
-					})}
+						{...register('file', {
+							required: 'Обязательное поле!',
+						})}
 						type="file"
 						name="file"
 					/>
-
 				</div>
 				<button type="submit">Добавить товар</button>
 			</form>

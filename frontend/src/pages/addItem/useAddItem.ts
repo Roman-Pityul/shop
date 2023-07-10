@@ -4,9 +4,6 @@ import { useMutation } from "react-query"
 import axiosOrigyn from "../../api/axios/axios"
 import { useForm } from "react-hook-form"
 import axios from "axios"
-import { ChangeEvent } from "react"
-import React from "react"
-import { Category } from "../../redux/category/types"
 
 type InputFields = {
   description: string
@@ -36,20 +33,26 @@ export const useAddItem = () => {
   const categories = useSelector(selectCategories)
 
   const {register, handleSubmit, formState: {errors}} = useForm<InputFields>({
-    mode: 'onChange'
+    mode: 'onChange',
+    defaultValues: {category: 'Хлеб'}
   })
 
   const onSubmit = async (data: InputFields) => {
-    const formData = new FormData()
-    formData.append('image', data.file[0])
-    const fileName = await uploadFile(formData)
-    mutateAsync({
-      description: data.description,
-      category: selectCategory(data.category),
-      price: data.price,
-      sale: data.sale,
-      img: fileName
-    })
+    try{
+      const formData = new FormData()
+      formData.append('image', data.file[0])
+      const fileName = await uploadFile(formData)
+      mutateAsync({
+        description: data.description,
+        category: selectCategory(data.category),
+        price: data.price,
+        sale: data.sale,
+        img: fileName
+      })
+    } catch (e) {
+      console.log('ERROR', e)
+    }
+    
   }
 
   const uploadFile = async (file: FormData) => {
@@ -58,7 +61,7 @@ export const useAddItem = () => {
   }
 
   const selectCategory = (catName: string) => {
-    const cat = categories.filter(c => c.name == catName)
+    const cat = categories.filter(c => c.name === catName)
     return String(cat[0].path)
   }
 
