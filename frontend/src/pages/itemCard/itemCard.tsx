@@ -12,6 +12,7 @@ import { useAppDispatch } from "../../redux/index";
 import { caclPriceWithSale } from "../../utils/calcPrice";
 
 import "./itemCard.scss";
+import { SERVER } from "../../helpers/constants";
 
 const ItemCard: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -42,7 +43,7 @@ const ItemCard: React.FC = () => {
               <h2 className="itemcard_title">{item.description}</h2>
               <div className="itemcard__content">
                 <div className="itemcard__left">
-                  <img src={item.img} alt="item_image" />
+                  <img src={`${SERVER}/${item.img}`} alt="item_image" />
                 </div>
                 <div className="itemcard__right">
                   <div className="itemcard__price">

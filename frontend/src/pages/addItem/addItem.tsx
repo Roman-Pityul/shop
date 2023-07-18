@@ -62,9 +62,7 @@ const AddItem: React.FC = () => {
 				<div>
 					<label>Скидка:</label>
 					<input
-						{...register('sale', {
-							required: 'Обязательное поле!',
-						})}
+						{...register('sale')}
 						type="text"
 						name="sale"
 						placeholder="Укажите скидку в %"
@@ -85,6 +83,22 @@ const AddItem: React.FC = () => {
 						name="file"
 					/>
 				</div>
+
+				<div>
+					<label>Папка:</label>
+					<select
+						{...register('folder', {
+							required: 'Обязательное поле!',
+						})}
+						name="folder"
+					><option>default</option>
+						{categories &&
+							categories.map((cat) => (
+								<option>{cat.path}</option>
+							))}
+					</select>
+				</div>
+
 				<button type="submit">Добавить товар</button>
 			</form>
 		</div>

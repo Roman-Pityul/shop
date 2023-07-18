@@ -10,7 +10,8 @@ type InputFields = {
   category: string
   price: string
   sale?: string
-  file: any
+  file: any,
+  folder: string
 }
 
 type UploadFileResponse = {
@@ -34,14 +35,14 @@ export const useAddItem = () => {
 
   const {register, handleSubmit, formState: {errors}} = useForm<InputFields>({
     mode: 'onChange',
-    defaultValues: {category: 'Хлеб'}
+    defaultValues: {category: 'Хлеб', folder: 'default'}
   })
 
   const onSubmit = async (data: InputFields) => {
     try{
       const formData = new FormData()
       formData.append('image', data.file[0])
-      const fileName = await uploadFile(formData)
+      const fileName = await uploadFile(formData, data.folder)
       mutateAsync({
         description: data.description,
         category: selectCategory(data.category),
@@ -55,8 +56,10 @@ export const useAddItem = () => {
     
   }
 
-  const uploadFile = async (file: FormData) => {
-    const resp = await axios.post<UploadFileResponse>('http://localhost:5000/files/upload', file)
+  const uploadFile = async (file: FormData, folder: string) => {
+    const resp = await axios.post<UploadFileResponse>('http://localhost:5000/files/upload', file, {
+      params: {folder}
+    })
     return resp.data.res.fileLink
   }
 

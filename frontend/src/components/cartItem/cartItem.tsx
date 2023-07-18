@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux'
 
 import { addItemsToCart, minusItem, deleteItem } from '../../redux/cart/cartReducer'
 import { caclPriceWithSale } from '../../utils/calcPrice'
+import { SERVER } from '../../helpers/constants';
 
 import "./cartitem.scss";
 
@@ -35,7 +36,7 @@ const CartItem: React.FC<ItemTypeProps> = ({ img, price, sale, description, coun
   return (
     <div className="cartitem">
       <div className="cartitem_left">
-        <img src={img} />
+        <img src={`${SERVER}/${img}`} />
         <div className="cartitem_info">
           <div className="cartitem_item-name">{description}</div>
           <div className="cartitem_item-price">
