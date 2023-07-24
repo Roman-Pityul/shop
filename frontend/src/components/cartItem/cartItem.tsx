@@ -63,7 +63,6 @@ const CartItem: React.FC<ItemTypeProps> = ({ img, price, sale, description, coun
               <p>₽</p>
             </div>
           )}
-
           <div className="cartitem_price-nosale">
             <p
               className={classNames({
