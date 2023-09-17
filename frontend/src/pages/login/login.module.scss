@@ -17,34 +17,18 @@
   margin: 0 auto;
   padding: 20px 40px 40px 40px;
   background-color: #fff;
-  // border: #70C05B 1px solid;
   border-radius: 5px;
 
   div {
     display: flex;
     justify-content: space-between;
     margin: 0 0 15px 0;
-
-    // input {
-    //   border-color: #70C05B;
-    // }
-
-    // label {
-    //   color: #70C05B
-    // }
   }
 
   button {
-    height: 30px;
     border: none;
     cursor: pointer;
     background-color: #70C05B;
     color: #fff
-  }
-
-  button:active {
-    background-color: #fff;
-    color: #70C05B;
-    border: #70C05B 1px solid;
   }
 }

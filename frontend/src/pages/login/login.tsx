@@ -4,9 +4,7 @@ import { UseAuth } from './useAuth'
 import TextField from '@mui/material/TextField'
 
 import styles from './login.module.scss'
-import { styled } from '@mui/styles'
-
-
+import { Button } from '@mui/material'
 
 const Login: React.FC = () => {
 
@@ -50,7 +48,13 @@ const Login: React.FC = () => {
 
           {errors.password && <div style={{ color: "red" }}>{errors.password.message}</div>}
 
-          <button type='submit'>Войти</button>
+          <Button 
+            type='submit' 
+            variant='contained' 
+            color="success"
+            size="large"
+          >Войти
+          </Button>
 
         </div>
       </form>
