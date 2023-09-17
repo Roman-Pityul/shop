@@ -1,12 +1,16 @@
 import React from 'react'
 import { validationEmail } from '../../helpers/validationEmail'
-import {UseAuth} from './useAuth'
+import { UseAuth } from './useAuth'
+import TextField from '@mui/material/TextField'
 
 import styles from './login.module.scss'
+import { styled } from '@mui/styles'
+
+
 
 const Login: React.FC = () => {
 
-  const { registerInput, handleSubmit, errors, onSubmit} = UseAuth()
+  const { registerInput, handleSubmit, errors, onSubmit } = UseAuth()
 
   return (
     <div className={styles.login}>
@@ -14,42 +18,37 @@ const Login: React.FC = () => {
         <div className={styles.loginForm}>
           <h2>Вход</h2>
 
-          <div>
-            <label htmlFor='email'>E-Mail:</label>
-            <input
-              {...registerInput("email", {
-                required: "Обязательное поле!",
-                pattern: {
-                  value: validationEmail,
-                  message: "Введите e-mail!"
-                }
+          <TextField
+            {...registerInput("email", {
+              required: "Обязательное поле!",
+              pattern: {
+                value: validationEmail,
+                message: "Введите e-mail!"
               }
-              )}
-              name='email'
-              type='text'
-              placeholder='Введите email'
-            />
-          </div>
+            }
+            )}
+            color='success'
+            id="outlined-basic"
+            label="Email"
+            variant="outlined" />
 
-          {errors.email && <div style={{color: "red"}}>{errors.email.message}</div>}
+          {errors.email && <div style={{ color: "red" }}>{errors.email.message}</div>}
 
-          <div><label htmlFor='password'>Пароль:</label>
-            <input
-              {...registerInput("password",{
-                required: "Обязательное поле!",
-                minLength: {
-                  value: 3,
-                  message: "Минимальная длинна пароля 3 символа"
-                }
+          <TextField
+            {...registerInput("password", {
+              required: "Обязательное поле!",
+              minLength: {
+                value: 3,
+                message: "Минимальная длинна пароля 3 символа"
               }
-              )}
-              name='password'
-              type='password'
-              placeholder='Введите пароль'
-            />
-          </div>
+            }
+            )}
+            color='success'
+            id="outlined-basic"
+            label="Password"
+            variant="outlined" />
 
-          {errors.password && <div style={{color: "red"}}>{errors.password.message}</div>}
+          {errors.password && <div style={{ color: "red" }}>{errors.password.message}</div>}
 
           <button type='submit'>Войти</button>
 
